@@ -1,0 +1,140 @@
+/* start popups styles */
+
+.m_window {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    
+    .window_block {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 570px;
+	height: 410px;
+	box-sizing: border-box;
+	padding: 50px 50px;
+	background: #d7dde9 url(images/m_window_bg.jpg) no-repeat center bottom/ cover;
+	
+	.close {
+	    position: absolute;
+	    width: 40px;
+	    height: 40px;
+	    top:50px;
+	    right: 0px;
+	    cursor: pointer;
+	    background-color: rgba(255, 255, 255, 0.6);
+	    text-indent: -100000px;
+	    
+	    &:before {
+		position: absolute;
+		content: "";
+		width: 14px;
+		height: 14px;
+		top: 14px;
+		right: 15px;
+		background: url(images/close_black.png) no-repeat center top ;
+		@include transition(transform);
+	    }
+	    
+	    &:after {
+		content: "";
+		display: block;
+		margin-left: -20px;
+		float: left;
+		border-bottom: 40px solid rgba(255, 255, 255, 0.6); 
+		border-left: 20px solid transparent;
+		}
+	    
+	    &:hover:before {
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+	    }
+	}
+	
+	h3 {
+	    margin-bottom: 25px; 
+	    color: #000;
+	    font-weight: 400;
+	}
+	
+	a {
+	    color: $color_text;
+	    text-decoration: underline;
+	    
+	    &:hover {
+		text-decoration: none;
+	    }
+	}
+    }
+    
+    .sended_block {
+	h3 {
+	    font-size: 65px;
+	    line-height: 95%;
+	    padding-top: 30px;
+	}
+	
+	p {
+	    font-size: 18px;
+	    line-height: 160%;
+	    max-width: 340px;
+	}
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .m_window {
+	.window_block {
+	    width: 500px;
+	    height: 380px;
+	    padding: 40px 40px;
+	    .close {
+		top:40px;
+	    }
+	}
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .m_window {
+	.window_block {
+	    width: 450px;
+	    height: 350px;
+	    padding: 30px 30px;
+	    
+	    .close {
+		top:30px;
+	    }
+	}
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .m_window {
+	.window_block {
+	    width: 80%;
+	    max-width: 450px;
+	    height: 310px;
+	    padding: 20px 20px;
+	    
+	    .close {
+		top:20px;
+	    }
+	}
+    }
+}
+
+
+
+

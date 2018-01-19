@@ -1,0 +1,183 @@
+/* start about styles */
+
+#about {
+    z-index: 1;
+    overflow: visible;
+    
+    &:after {
+
+	background: -webkit-linear-gradient(right, #0f2f62 0%, #0f2f62 40%, #03132d 100%); /* для webkit-браузеров */
+	background: -moz-linear-gradient(right, #0f2f62 0%, #0f2f62 40%, #03132d 100%); /* для firefox 3.6+ */
+	background: -o-linear-gradient(right, #0f2f62 0%, #0f2f62 40%, #03132d 100%); /* для Opera 11.10+ */
+	background: -ms-linear-gradient(right, #0f2f62 0%, #0f2f62 40%, #03132d 100%); /* для IE10+ */
+	 background: linear-gradient(to left, #0f2f62 0%, #0f2f62 40%, #03132d 100%);
+
+	}
+    
+    > .img {
+        height: 116%;
+        top: -8%;
+        text-align: center;
+        
+        &:before {
+            content: "СИТ";
+            font-size: 165px;
+            line-height: 165px;
+            color: $color_a;
+            font-weight: 800;
+            padding-left: 25px;
+            display: inline-block;
+            padding-top: 40px;
+        }
+    }
+    
+    .video {
+        margin-top: 140px;
+        width: 710/1560*100%;
+        position: relative;
+        background: url(images/video.jpg) no-repeat center / cover;
+        height: 420px;
+        overflow: hidden;
+        text-align: center;
+        
+        a span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 570px;
+            display: block;
+            color: #fff;
+        }
+    }
+    
+    .text {
+        padding-bottom: 10px;
+        margin-left:50%;
+        padding-top: 50px;
+    }
+    .button_block {
+        padding-bottom: 50px;
+        margin-left:50%;
+    }
+}
+
+p.big {
+    font-size: 150%;
+    line-height: 145%;
+}
+
+.about .content_wrap {
+    background: url(images/about_page_bg.jpg) no-repeat center bottom / 100% auto;
+    padding-bottom: 850px;
+    margin-bottom: -250px;
+}
+
+@media screen and (max-width: 1600px) {
+    .about .content_wrap {
+        background-size: 117% auto;
+        //padding-bottom: 750px;
+        //margin-bottom: -200px;
+    }
+}
+
+@media screen and (max-width: 1340px){
+    #about {
+        padding-top: 160px;
+        margin-top: -150px;
+        padding-bottom: 300px;
+        margin-bottom: -200px;
+        
+        
+        .about_img {
+            margin: 0px -20px 85px -70px;
+        }
+    }
+    
+    .about .content_wrap {
+        background-size: 135% auto;
+        padding-bottom: 800px;
+        margin-bottom: -200px;
+    }
+    
+}
+@media screen and (max-width: 1170px){
+    
+    .about .content_wrap {
+        padding-bottom: 700px;
+        margin-bottom: -150px;
+    }
+    
+}
+@media screen and (max-width: 1000px) {
+    #about {
+        padding-top: 120px;
+        margin-top: -150px;
+        padding-bottom: 300px;
+        margin-bottom: -200px;
+        
+        
+        .about_img {
+            margin: 50px -20px 85px -50px;
+            width: 55%;
+        }
+    }
+    
+    .about .content_wrap {
+        padding-bottom: 600px;
+        margin-bottom: -140px;
+    }
+}
+@media screen and (max-width: 800px) {
+    #about {
+        padding-top: 120px;
+        margin-top: -150px;
+        padding-bottom: 300px;
+        margin-bottom: -200px;
+        
+        
+        .about_img {
+            margin: 30px -20px 50px -20px;
+            width: 55%;
+        }
+    }
+    .about .content_wrap {
+        padding-bottom: 460px;
+        margin-bottom: -100px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    #about {
+        padding-top: 150px;
+        margin-top: -150px;
+        padding-bottom: 300px;
+        margin-bottom: -250px;
+        
+        
+        .about_img {
+            margin: 30px -20px 30px -20px;
+            width: 55%;
+        }
+    }
+    .about .content_wrap {
+        padding-bottom: 330px;
+        margin-bottom: -80px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #about {
+        
+        .about_img {
+            display: none;
+        }
+    }
+    .about .content_wrap {
+        padding-bottom: 270px;
+        margin-bottom: -60px;
+    }
+}
+
+/* end about styles */

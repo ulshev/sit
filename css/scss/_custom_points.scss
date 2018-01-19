@@ -1,0 +1,155 @@
+/* start custom_points styles */
+
+#custom_points {
+    background: url(images/custom_points.png) no-repeat center top ;
+    padding-top: 220px;
+    padding-bottom: 150px;
+    z-index: 2;
+    
+    .text {
+	float: right;
+	width: 340/1340*100%;
+	margin-right: 140/1340*100%;
+    }
+    
+    .h1 {
+	text-align: left;
+	line-height: 90%;
+	//font-size: 50px;
+    }
+    
+    ul {
+	padding-bottom: 10px;
+	li {
+	    font-family: $font_family_h;
+	    color: $color_a;
+	    font-size: 25px;
+	    line-height: 130%;
+	    margin-bottom: 20px;
+	    padding-left: 0;
+	    
+	    &:before {
+		display: none;
+	    }
+	    
+	    .content {
+		padding-left: 30px;
+		background: url(images/icon_address_blue.png) no-repeat left 3px ;
+	    }
+	}
+    }
+    
+    .points {
+	margin-top: -100px;
+	.point.smolensk {
+	    top: 537px;
+	    margin-left: -569px;
+	}
+	
+	.point.moscow {
+	    top: 511px;
+	    margin-left: -352px;
+	    z-index: 2;
+	}
+	.point.sheremetyevo {
+	    top: 473px;
+	    margin-left: -352px;
+	}
+	
+	.point.petersburg {
+	    top: 106px;
+	    margin-left: -356px;
+	}
+	
+	.point.baltic {
+	    top: 68px;
+	    margin-left: -397px;
+	}
+    }
+    
+}
+
+//@media screen and (max-width: 1600px) {
+//    #custom_points {
+	
+//    }
+//}
+
+@media screen and (max-width: 1300px)  {
+    #custom_points {
+	.text {
+	    width: 440/1340*100%;
+	}
+	
+    }
+}
+@media screen and (max-width: 999px) {
+    #custom_points {
+	.text {
+	    width: 640/1340*100%;
+	    margin-right: 0%;
+	}
+	
+	ul {
+	    li {
+		font-size: 22px;
+		line-height: 130%;
+	    }
+	}
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    #custom_points {
+	
+    }
+}
+
+@media screen and (max-width: 590px) {
+    #custom_points {
+	padding-top: 130px;
+	padding-bottom: 50px;
+	background-position: 60% top;
+	.text {
+	    width: 1040/1340*100%;
+	}
+	
+	ul {
+	    li {
+		font-size: 20px;
+		line-height: 130%;
+	    }
+	}
+	
+	.points {
+	    display: none;
+	}
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    #custom_points {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-position: 55% top;
+	.text {
+	    width: 90%;
+	    //float: none;
+	}
+	
+	ul {
+	    li {
+		font-size: 20px;
+		line-height: 130%;
+	    }
+	}
+	
+	.points {
+	    display: none;
+	}
+    }
+}
+
+/* end action styles */

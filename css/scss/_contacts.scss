@@ -1,0 +1,145 @@
+/* start contacts styles */
+
+#contacts {
+    z-index: 2;
+    overflow: hidden;
+    padding-top: 50px;
+    
+    .in {
+	padding: 0 20px;
+	.h1, p, .tab_buttons {
+	    position: relative;
+	    z-index: 6;
+	    text-align: center;
+	}
+	
+    }
+    
+    .tab_buttons {
+	.tab_but{
+	    padding: 15px 25px;
+	    .content {
+		padding-left: 30px;
+		background: url(images/icon_address_blue.png) no-repeat left center ;
+	    }
+	}
+	
+	.tab_but:last-child .content {
+	    background-image: url(images/tocont.png);
+	}
+    }
+}  
+    
+
+	.cont {
+	    background: no-repeat left 3px / 12px auto;
+	    margin-bottom: 0;
+	    padding: 0 0 0 20px;
+	    margin-bottom: 15px;
+	    font-size: 14px;
+	    line-height: 145%;
+	    
+	    &.address {
+		background-image: url(images/icon_address.png);
+	    }
+	    &.letter {
+		background-image: url(images/icon_letter.png);
+		background-position: left 7px;
+	    }
+	    &.tel {
+		background-image: url(images/icon_tel.png);
+		background-position: left 9px;
+		
+		font-size: 18px;
+	    }
+	}
+    
+.map, #map {
+    height: 649px;
+    position: relative;
+    z-index: 1;
+    margin-top: -50px;
+    background: url(images/map.jpg) no-repeat center bottom;
+	
+	
+    &:before {
+	background: url(images/separator.png) no-repeat center bottom;
+        height: 200px;
+	content: "";
+        position: absolute;
+	z-index: 1;
+	width: 100%;
+	left: 0;
+	top: -60px;
+    }
+}
+.map {   
+    .points {
+	.point.smolensk {
+	    top: 510px;
+	    margin-left: 214px;
+	}
+	
+	.point.yaroslavl {
+	    top: 397px;
+	    margin-left: 340px;
+	}
+	
+	.point.moscow {
+	    top: 580px;
+	    margin-left: 598px;
+	}
+	
+	.point.petersburg {
+	    top: 240px;
+	    margin-left: 255px;
+	}
+    }
+}
+
+.contacts_page {
+    
+    .map, #map {
+	margin-top: 0;
+	&:before {
+	    display: none;
+	}
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    #contacts {
+	
+	
+    }  
+}
+
+@media screen and (max-width: 1300px)  {
+    #contacts {
+	
+    } 
+}
+@media screen and (max-width: 999px) {
+    #contacts {
+	
+    } 
+}
+
+
+@media screen and (max-width: 800px) {
+    #contacts {
+	
+    } 
+}
+
+@media screen and (max-width: 590px) {
+    #contacts {
+	
+    } 
+}
+
+//@media screen and (max-width: 450px) {
+    
+//}
+
+/* end contacts styles */

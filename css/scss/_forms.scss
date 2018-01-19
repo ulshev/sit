@@ -1,0 +1,282 @@
+/* start forms styles */
+
+.form_block {  
+    margin-left: 655/1560*100%;
+    padding-top: 133px;
+    padding-bottom: 50px;
+    
+    .h2 + p {
+	font-size: 18px;
+	line-height: 130%;
+	letter-spacing: 2.6px;
+	margin-bottom: 44px;
+	max-width: 550px;
+    }
+    
+    
+    form {
+	letter-spacing: 1.4px;
+	a {
+	    color: #fff;
+	    text-decoration: none;
+	    
+	    &:hover {
+		text-decoration: underline;
+	    }
+	}
+    }
+    input, textarea, select {
+	padding: 5px 20px;
+	margin: 0 0 46px 4%;
+	width: 30%;
+	height: 49px;
+	outline: none;
+	border: 1px solid transparent;
+	border-bottom: 0px; // solid #d7e1ea;
+	background:rgba(255, 255, 255, 0.26);
+	border-radius: 25px;
+	font-family: $font_family_os;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 35px;
+	color: $color_text;
+        vertical-align: middle;
+	box-sizing: border-box;
+	@include transition(background);
+	
+	
+	&::-webkit-input-placeholder {opacity: 1; color: #fff;}
+	&::-moz-placeholder          {opacity: 1; color: #fff;}/* Firefox 19+ */
+	&:-moz-placeholder           {opacity: 1; color: #fff;}/* Firefox 18- */
+	&:-ms-input-placeholder      {opacity: 1; color: #fff;}
+	
+    }
+    input, textarea, select {
+	&:first-child {
+	    margin-left: 0;
+	}
+    }
+    input, textarea, select {
+	&:active, &:focus {
+	    background:rgba(255, 255, 255, 1);
+	}
+    }
+    input[type="radio"], input[type="checkbox"] {
+	width: auto;
+	height: auto;
+	margin-bottom: 0;
+	opacity: 0;
+	margin-left: -2px;
+    }
+    
+    input[type="checkbox"] + label {
+	display: inline-block;
+	//padding-left: 30px;
+	position: relative;
+	margin-left: -15px;
+	margin-bottom: 30px;
+	vertical-align: middle;
+	
+	
+	&:before {
+	    content: '';
+	    //position: absolute;
+	    float: left;
+	    margin-right: 10px;
+	    width: 21px;
+	    height: 21px;
+	    //left: 0;
+	    //top: -1px;
+	    background: url(images/checkbox.png) no-repeat left top;
+	}
+	
+	&:hover:before {
+	    opacity: 0.8;
+	}
+    }
+    input[type="checkbox"]:checked + label {
+	&:before {
+	    background-position: left bottom;
+	}
+    }
+    input[type="checkbox"] + label + a {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 30px;
+	margin-right: 30px;
+    }
+    
+    textarea, input.textarea {
+	    min-width: 100%;
+	    max-width: 100%;
+	    min-height: 80px;
+	    max-height: 100px;
+	    resize: none;
+	    margin-bottom: 25px;
+    }
+    button[type="submit"] {
+	    margin-right: 0;
+	    margin-bottom: 30px;
+	    padding: 0 10px 0 30px;
+	    width: 256px;
+	    height: 49px;
+	    line-height: 49px;
+	    font-size: 14px;
+	    font-weight: 400;
+	    background-color: #fff;
+	    color: $color_a;
+	    cursor: pointer;
+	    box-sizing: border-box;
+	    @include transition(background-color);
+	    border: 0;
+	    border-radius: 25px;
+	    text-align: center;
+	    position: relative;
+	    vertical-align: middle;
+	
+	&:before {
+	    content: '';
+	    position: absolute;
+	    width: 42px;
+	    height: 42px;
+	    left: 4px;
+	    top:4px;
+	    background: $color_a url(images/icons.png) no-repeat 8px -96px;
+	    border-radius: 21px;
+	    @include transition(background-color);
+	}
+    }
+    button[type="submit"]:hover {
+	background-color: $color_a;
+	color: #fff;
+	
+	&:before {
+	    background-color: #fff;
+	    background-position: -36px -96px;
+	    
+	}
+    }
+    button[type="submit"]:active {
+	background: #18b1ee;
+	//box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    }
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1600px) {
+    .form_block {  
+	padding-top: 115px;
+    }
+}
+@media screen and (max-width: 1450px) {
+    .form_block {  
+	padding-top: 90px;
+    }
+}
+@media screen and (max-width: 1300px)  {
+    .form_block {  
+	padding-top: 70px;
+	padding-bottom: 40px;
+	.h2 + p {
+	    margin-bottom: 30px;
+	    font-size: 17px;
+	}
+	input, textarea, select {
+	    margin: 0 0 30px 4%;
+	}
+    }
+    
+}
+@media screen and (max-width: 999px) {
+    .form_block {  
+	margin-left: 0%;
+	.h2 + p {
+	    font-size: 16px;
+	}
+    }
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .form_block {  
+	padding-top: 50px;
+	padding-bottom: 30px;
+	.h2 + p {
+	    font-size: 15px;
+	}
+	input, textarea, select {
+	    height: 39px;
+	    line-height: 39px;
+	    font-size: 16px;
+	}
+	button[type="submit"] {
+	    height: 39px;
+	    line-height: 39px;
+	    
+	    &:before {
+		width: 34px;
+		height: 34px;
+		left: 3px;
+		top: 3px;
+		background-size: 48px;
+		background-position: 8px -64px;
+	    }
+	    
+	    &:hover {
+		&:before {
+		    background-position: -23px -64px;
+		}
+	    }
+	}
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .form_block {  
+	padding-top: 40px;
+	padding-bottom: 20px; 
+	form {
+	    letter-spacing: 0.5px;
+	}
+	.h2 + p {
+	    font-size: 14px;
+	    letter-spacing: 0.5px;
+	}
+	input, textarea, select {
+	    margin: 0 0 30px 0;
+	    width: 90%;
+	    max-width: 320px;
+	}
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .form_block{
+	input[type="checkbox"] + label, input[type="checkbox"] + label + a {
+	    margin-bottom: 0;
+	    margin-right: 0px;
+	    display: inline;
+	    vertical-align: top;
+	}
+	input[type="checkbox"] + label {
+	    &:before {
+		margin-bottom: 20px;
+	    }
+	}
+	button[type="submit"] {
+	    margin-top: 30px;
+	}
+    }  
+}
+
+
+
+/* end forms styles */
