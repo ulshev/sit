@@ -1,0 +1,226 @@
+/* start waterproofing styles */
+
+#waterproofing {
+    //background-color: #fff;
+    overflow: visible;
+    
+    
+    .tabs_container {
+	
+    }
+
+    .tab {
+	position: relative;
+	width: 100%;
+	background: no-repeat center top;
+	
+	.in {
+	    padding: 0;
+	    max-width: 1600px;
+	    //position: static;
+	    z-index: auto;
+	}
+	
+	h3 {
+	    position: absolute;
+	    width: 100%;
+	    text-align:  center;
+	    top: 170px;
+	    left: 0;
+	    letter-spacing: 2px;
+	}
+	
+	img.bg {
+	    width: 100%;
+	    //opacity: 0;
+	}
+	
+	
+	&:after {
+	    @include clear();
+	}
+	
+	&.residential_facility {
+	    background-image: url(images/residential_facility_bg.jpg);
+	}
+    }
+    .points {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 7;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+    }
+    .point {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 0%;
+	left: 0%;
+	//z-index: 10;
+	pointer-events: auto;
+	
+	&.p1 {
+	    top: 22.95%;
+	    left: 31.88%;
+	}
+	&.p2 {
+	    top: 65%;
+	    left: 22%;
+	}
+	&.p3 {
+	    top: 64.4%;
+	    left: 46.5%;
+	}
+	&.p4 {
+	    top: 78.6%;
+	    left: 27.2%;
+	}
+	&.p5 {
+	    top: 77.5%;
+	    left: 35.5%;
+	}
+	&.p6 {
+	    top: 86.9%;
+	    left: 29.3%;
+	}
+	&.p7 {
+	    top: 81.3%;
+	    left: 45.7%;
+	}
+	&.p8 {
+	    top: 78.9%;
+	    left: 59.4%;
+	}
+	&.p9 {
+	    top: 76.4%;
+	    left: 68.9%;
+	}
+	&.p10 {
+	    top: 73.5%;
+	    left: 98.0%;
+	}
+	
+	.plus {
+	    width: 100%;
+	    height: 100%;
+	    font-size: 36px;
+	    line-height: 34px;
+	    background-color: $color_a;
+	    background-clip: padding-box;
+	    border: 4px solid rgba(51,197,255,0.42);
+	    overflow: hidden;
+	    box-sizing: border-box;
+	    display: block;
+	    text-align:  center;
+	    color: #fff;
+	    vertical-align: middle;
+	    font-weight: 700;
+	    border-radius: 20px;
+	    padding: 1px;
+	    cursor: pointer;
+	    position: relative;
+	    z-index: 1;
+	    @include transition(transform);
+	    
+	    &:hover {
+		opacity: 0.8;
+	    }
+	    
+	    &.active {
+		    -webkit-transform: rotate(45deg);
+		    -moz-transform: rotate(45deg);
+		    -o-transform: rotate(45deg);
+		    transform: rotate(45deg);
+		    z-index: 3;
+	    }
+	}
+	
+	.description {
+	   position: absolute;
+	   bottom: 45px;
+	   width: 720px;
+	   height: 200px;
+	   z-index: 1;
+	   border-radius: 10px;
+	   left: 50%;
+	   margin-left: -360px;
+	   display: none;
+	   z-index: 2;
+	   
+	   &:after {
+	    position: absolute;
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-left: 23px solid transparent;
+	    border-right: 23px solid transparent;
+	    border-top: 20px solid #fff;
+	    left: 50%;
+	    margin-left: -23px;
+	   }
+	   
+	   .img {
+	    float: left;
+	    width: 200px;
+	    height: 100%;
+	    line-height: 200px;
+	    background-color: rgba(4,20,46,0.72);
+	    text-align:  center;
+	    border-radius: 10px 0 0 10px;
+	    
+		img {
+		    max-width: 80%;
+		    vertical-align: middle;
+		}
+	    }
+	    
+	    .info {
+		margin-left: 200px;
+		background-color: #fff;
+		padding: 40px 20px 20px;
+		height: 100%;
+		box-sizing: border-box;
+		border-radius: 0 10px 10px 0;
+	    }
+	   
+	}
+    }
+}
+
+//@media screen and (max-width: 1600px) {
+    
+//}
+
+@media screen and (max-width: 1300px){
+    #waterproofing {
+	
+	
+    }
+}
+@media screen and (max-width: 999px) {
+    #waterproofing {
+	
+    }
+}
+@media screen and (max-width: 800px) {
+    #waterproofing {
+	
+	
+    }
+}
+
+@media screen and (max-width: 590px) {
+    #waterproofing {
+	
+	
+    }
+}
+
+//@media screen and (max-width: 450px) {
+
+//}
+
+/* end standards styles */

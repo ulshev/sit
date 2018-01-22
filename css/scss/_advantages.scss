@@ -1,22 +1,33 @@
 /* start advantages styles */
 
 #advantages {
-    z-index: 2;
+    //z-index: 2;
     overflow: hidden;
     background-color: #fff;
     
-    .h1 {
-	color: #964f32;
+    .in {
+	padding: 140px 20px 100px;
+    }
+    
+    .left_block {
+	width: 640/1560*100%;
+    }
+    
+    .h2 {
+	max-width: 300px;
     }
     
     
     .advantages_block {
-	padding-top: 50px;
+	margin-left: 800/1560*100%;
+	padding-top: 20px;
+	
 	li {
 	    text-align: left;
-	    width: 30%;
-	    margin-right: 3%;
-	    padding: 20px 0px 10px 60px;
+	    width: 45%;
+	    max-width: 300px;
+	    margin-right: 4.5%;
+	    padding: 5px 0px 40px 70px;
 	    box-sizing: border-box;
 	    display: inline-block;
 	    vertical-align: top;
@@ -27,19 +38,30 @@
 	    position: relative;
 	    
 	    &:before {
-		font-weight: 900;
-		font-size: 92px;
-		line-height: 100%;
 		position: absolute;
-		left: 0;
-		top: -10px;
-		overflow: hidden;
+		z-index: 0;
+		content: '';
+		left: 0px;
+		top: -0px;
+		width: 100px;
+		height: 100px;
+		background: url(images/circle.png) no-repeat center ;
+	    }
+	    
+	    .h4, .numeric {
+		text-transform: uppercase;
+		font-weight: 800;
+		display: block;
+	    }
+	    
+	    .numeric {
+		font-size: 60px;
+		line-height: 100%;
+		color: $color_a;
 	    }
 	    
 	    p {
-		font-size: 15px;
-		position: relative;
-		z-index: 1;
+		
 	    }
 	}
     }
@@ -52,29 +74,12 @@
 
 @media screen and (max-width: 1300px){
     #advantages {
-	.advantages_block {
-	    padding-top: 30px;
-	    li {
-		//line-height: 145%;
-		//font-size: 15px;
-		margin-bottom: 20px;
-		padding-left: 50px;
-		
-		.num {
-		    top: 0px;
-		}
-	    }
-	}
+	
     }
 }
 @media screen and (max-width: 999px) {
     #advantages {
-	.advantages_block {
-	    li {
-		width: 46%;
-		
-	    }
-	}
+	
     }
 }
 
@@ -82,18 +87,6 @@
 @media screen and (max-width: 800px) {
     #advantages {
 	
-	.in {
-	    padding: 30px 20px;
-	}
-	.advantages_block {
-	    li {
-		//width: 100%;
-		//margin-right: 0;
-		padding: 20px 20px 30px;
-		//height: 230px;
-		margin-bottom: 0px;
-	    }
-	}
     }
 }
 
@@ -105,17 +98,7 @@
 
 @media screen and (max-width: 450px) {
     #advantages {
-	.advantages_block {
-	    padding-top: 0px;
-	    li {
-		width: 100%;
-		max-width: 350px;
-		//margin-right: 0;
-		padding: 20px 0px 0px 20px;
-		//height: 230px;
-		margin-bottom: 0px;
-	    }
-	}
+	
     }
 }
 

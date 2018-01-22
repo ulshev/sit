@@ -110,10 +110,23 @@ $(document).ready(function() {
 	});
 	
 	
-	    if ( window.innerWidth>0 ) {
-		    $('.main_section').toggleClass("hidden");
-		    //$('#main_slide.hidden').addClass("animated");	
-	    };
+	$('.plus').click(function(){
+		if ($(this).parent().children('.description').css("display") == "block") {
+		    $(this).parent().children('.description').slideUp(500);
+		    $(this).removeClass('active');
+		}else{
+		    $('.description').slideUp(500);
+		    $('.plus').removeClass('active');
+		    $(this).parent().children('.description').slideDown(500);
+		    $(this).addClass('active');
+		}
+	});
+	
+	
+	if ( window.innerWidth>0 ) {
+	    $('.main_section').toggleClass("hidden");
+	     //$('#main_slide.hidden').addClass("animated");	
+	};
 	
 	
 	$(window).on('load scroll', function(){

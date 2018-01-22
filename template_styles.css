@@ -24,7 +24,7 @@ img {
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 0 0 30px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -220,7 +220,7 @@ h6, .h6 {
   }
 
   h4, .h4 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   h5, .h5 {
@@ -401,53 +401,102 @@ a.button:active {
 
 .tab_buttons {
   text-align: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  z-index: 5;
 }
 .tab_buttons > span {
   display: inline-block;
-  padding: 15px 35px;
-  cursor: pointer;
-  font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+  color: #111111;
+  font-weight: 700;
   font-size: 18px;
-  box-sizing: border-box;
-  vertical-align: middle;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 20px 25px 5px 70px;
+  margin: 0 10px 20px;
+  min-width: 305px;
   height: 60px;
-  line-height: 30px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  border-radius: 30px;
   position: relative;
-  background: #fff;
-  /* for non-css3 browsers */
-  background: -webkit-linear-gradient(top, transparent, #fff);
-  /* для webkit-браузеров */
-  background: -moz-linear-gradient(top, transparent, #fff);
-  /* для firefox 3.6+ */
-  background: -o-linear-gradient(top, transparent, #fff);
-  /* для Opera 11.10+ */
-  background: -ms-linear-gradient(top, transparent, #fff);
-  /* для IE10+ */
-  background: linear-gradient(to top, #fff, transparent);
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
 }
-.tab_buttons > span:after {
-  content: '';
+.tab_buttons > span .icon {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: border-color 0.2s ease-out 0s;
-  -moz-transition: border-color 0.2s ease-out 0s;
-  -o-transition: border-color 0.2s ease-out 0s;
-  transition: border-color 0.2s ease-out 0s;
+  left: -1px;
+  top: -1px;
+  background-color: rgba(255, 255, 255, 0.41);
+  background-clip: padding-box;
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
 }
-.tab_buttons > span:hover {
+.tab_buttons > span .icon:before, .tab_buttons > span .icon:after {
+  content: '';
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: #dbeef9;
+  border-radius: 30px;
+  opacity: 0.7;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.tab_buttons > span .icon:after {
+  opacity: 0;
+  background: url(images/icon_bg.png) no-repeat center;
+}
+.tab_buttons > span .icon img {
+  position: relative;
+  z-index: 2;
+  width: 36px;
+  top: -61px;
+}
+.tab_buttons > span:hover, .tab_buttons > span.active {
+  background-color: white;
   color: #33c5ff;
 }
-.tab_buttons > span > span, .tab_buttons > span > a {
-  -webkit-transform: skew(25deg);
-  -moz-transform: skew(25deg);
-  -o-transform: skew(25deg);
-  transform: skew(25deg);
-  display: block;
-  overflow: hidden;
+.tab_buttons > span:hover .icon, .tab_buttons > span.active .icon {
+  background: -webkit-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%);
+  /* для webkit-браузеров */
+  background: -moz-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%);
+  /* для firefox 3.6+ */
+  background: -o-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%);
+  /* для Opera 11.10+ */
+  background: -ms-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%);
+  /* для IE10+ */
+  background: linear-gradient(225deg, rgba(0, 128, 255, 0.41) 0%, rgba(0, 181, 255, 0.41) 100%);
+  background-clip: initial;
+  border-color: rgba(255, 255, 255, 0.41);
+}
+.tab_buttons > span:hover .icon img, .tab_buttons > span.active .icon img {
+  top: 0px;
+}
+.tab_buttons > span:hover .icon:before, .tab_buttons > span.active .icon:before {
+  opacity: 0;
+}
+.tab_buttons > span:hover .icon:after, .tab_buttons > span.active .icon:after {
+  opacity: 1;
 }
 
 .in {
@@ -469,7 +518,7 @@ a.button:active {
 
 .main_section {
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   position: relative;
 }
 
@@ -484,18 +533,19 @@ a.button:active {
 }
 .section_bg .img {
   position: absolute;
-  width: 32.8125%;
+  width: calc(50% - 335px);
   height: 100%;
   background: no-repeat center / cover;
   left: 0;
   top: 0;
+  z-index: 1;
 }
 .section_bg:after {
   content: '';
   position: absolute;
   right: 0;
   top: 0;
-  width: 67.1875%;
+  width: calc(50% + 335px);
   height: 100%;
   background: -webkit-linear-gradient(right, #26baff 0%, #0063d4 47%, #0f2f62 72%, #03132d 100%);
   /* для webkit-браузеров */
@@ -1614,6 +1664,177 @@ footer #dev {
   }
 }
 /* end main slider styles */
+/* start waterproofing styles */
+#waterproofing {
+  overflow: visible;
+}
+#waterproofing .tab {
+  position: relative;
+  width: 100%;
+  background: no-repeat center top;
+}
+#waterproofing .tab .in {
+  padding: 0;
+  max-width: 1600px;
+  z-index: auto;
+}
+#waterproofing .tab h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 170px;
+  left: 0;
+  letter-spacing: 2px;
+}
+#waterproofing .tab img.bg {
+  width: 100%;
+}
+#waterproofing .tab:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#waterproofing .tab.residential_facility {
+  background-image: url(images/residential_facility_bg.jpg);
+}
+#waterproofing .points {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#waterproofing .point {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0%;
+  left: 0%;
+  pointer-events: auto;
+}
+#waterproofing .point.p1 {
+  top: 22.95%;
+  left: 31.88%;
+}
+#waterproofing .point.p2 {
+  top: 65%;
+  left: 22%;
+}
+#waterproofing .point.p3 {
+  top: 64.4%;
+  left: 46.5%;
+}
+#waterproofing .point.p4 {
+  top: 78.6%;
+  left: 27.2%;
+}
+#waterproofing .point.p5 {
+  top: 77.5%;
+  left: 35.5%;
+}
+#waterproofing .point.p6 {
+  top: 86.9%;
+  left: 29.3%;
+}
+#waterproofing .point.p7 {
+  top: 81.3%;
+  left: 45.7%;
+}
+#waterproofing .point.p8 {
+  top: 78.9%;
+  left: 59.4%;
+}
+#waterproofing .point.p9 {
+  top: 76.4%;
+  left: 68.9%;
+}
+#waterproofing .point.p10 {
+  top: 73.5%;
+  left: 98.0%;
+}
+#waterproofing .point .plus {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  line-height: 34px;
+  background-color: #33c5ff;
+  background-clip: padding-box;
+  border: 4px solid rgba(51, 197, 255, 0.42);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  color: #fff;
+  vertical-align: middle;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 1px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: transform 0.2s ease-out 0s;
+  -moz-transition: transform 0.2s ease-out 0s;
+  -o-transition: transform 0.2s ease-out 0s;
+  transition: transform 0.2s ease-out 0s;
+}
+#waterproofing .point .plus:hover {
+  opacity: 0.8;
+}
+#waterproofing .point .plus.active {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 3;
+}
+#waterproofing .point .description {
+  position: absolute;
+  bottom: 45px;
+  width: 720px;
+  height: 200px;
+  z-index: 1;
+  border-radius: 10px;
+  left: 50%;
+  margin-left: -360px;
+  display: none;
+  z-index: 2;
+}
+#waterproofing .point .description:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 20px solid #fff;
+  left: 50%;
+  margin-left: -23px;
+}
+#waterproofing .point .description .img {
+  float: left;
+  width: 200px;
+  height: 100%;
+  line-height: 200px;
+  background-color: rgba(4, 20, 46, 0.72);
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+}
+#waterproofing .point .description .img img {
+  max-width: 80%;
+  vertical-align: middle;
+}
+#waterproofing .point .description .info {
+  margin-left: 200px;
+  background-color: #fff;
+  padding: 40px 20px 20px;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 0 10px 10px 0;
+}
+
+/* end standards styles */
 /* start services styles */
 #services {
   z-index: 1;
@@ -2003,7 +2224,7 @@ footer #dev {
   vertical-align: middle;
 }
 .production .slide .info .center {
-  line-height: 200%;
+  line-height: 160%;
   display: inline-block;
 }
 .production .slide .info .h5 {
@@ -2047,7 +2268,7 @@ footer #dev {
 /* end production styles */
 /* start about styles */
 #about {
-  z-index: 1;
+  z-index: 2;
   overflow: visible;
 }
 #about:after {
@@ -2110,99 +2331,32 @@ p.big {
   line-height: 145%;
 }
 
-.about .content_wrap {
-  background: url(images/about_page_bg.jpg) no-repeat center bottom/100% auto;
-  padding-bottom: 850px;
-  margin-bottom: -250px;
-}
-
-@media screen and (max-width: 1600px) {
-  .about .content_wrap {
-    background-size: 117% auto;
-  }
-}
 @media screen and (max-width: 1340px) {
-  #about {
-    padding-top: 160px;
-    margin-top: -150px;
-    padding-bottom: 300px;
-    margin-bottom: -200px;
-  }
   #about .about_img {
     margin: 0px -20px 85px -70px;
   }
-
-  .about .content_wrap {
-    background-size: 135% auto;
-    padding-bottom: 800px;
-    margin-bottom: -200px;
-  }
-}
-@media screen and (max-width: 1170px) {
-  .about .content_wrap {
-    padding-bottom: 700px;
-    margin-bottom: -150px;
-  }
 }
 @media screen and (max-width: 1000px) {
-  #about {
-    padding-top: 120px;
-    margin-top: -150px;
-    padding-bottom: 300px;
-    margin-bottom: -200px;
-  }
   #about .about_img {
     margin: 50px -20px 85px -50px;
     width: 55%;
   }
-
-  .about .content_wrap {
-    padding-bottom: 600px;
-    margin-bottom: -140px;
-  }
 }
 @media screen and (max-width: 800px) {
-  #about {
-    padding-top: 120px;
-    margin-top: -150px;
-    padding-bottom: 300px;
-    margin-bottom: -200px;
-  }
   #about .about_img {
     margin: 30px -20px 50px -20px;
     width: 55%;
   }
-
-  .about .content_wrap {
-    padding-bottom: 460px;
-    margin-bottom: -100px;
-  }
 }
 @media screen and (max-width: 590px) {
-  #about {
-    padding-top: 150px;
-    margin-top: -150px;
-    padding-bottom: 300px;
-    margin-bottom: -250px;
-  }
   #about .about_img {
     margin: 30px -20px 30px -20px;
     width: 55%;
-  }
-
-  .about .content_wrap {
-    padding-bottom: 330px;
-    margin-bottom: -80px;
   }
 }
 @media screen and (max-width: 450px) {
   #about .about_img {
     display: none;
-  }
-
-  .about .content_wrap {
-    padding-bottom: 270px;
-    margin-bottom: -60px;
   }
 }
 /* end about styles */
@@ -2341,21 +2495,28 @@ p.big {
 /* end sertificates styles */
 /* start advantages styles */
 #advantages {
-  z-index: 2;
   overflow: hidden;
   background-color: #fff;
 }
-#advantages .h1 {
-  color: #964f32;
+#advantages .in {
+  padding: 140px 20px 100px;
+}
+#advantages .left_block {
+  width: 41.02564%;
+}
+#advantages .h2 {
+  max-width: 300px;
 }
 #advantages .advantages_block {
-  padding-top: 50px;
+  margin-left: 51.28205%;
+  padding-top: 20px;
 }
 #advantages .advantages_block li {
   text-align: left;
-  width: 30%;
-  margin-right: 3%;
-  padding: 20px 0px 10px 60px;
+  width: 45%;
+  max-width: 300px;
+  margin-right: 4.5%;
+  padding: 5px 0px 40px 70px;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -2366,63 +2527,116 @@ p.big {
   position: relative;
 }
 #advantages .advantages_block li:before {
-  font-weight: 900;
-  font-size: 92px;
-  line-height: 100%;
   position: absolute;
-  left: 0;
-  top: -10px;
-  overflow: hidden;
+  z-index: 0;
+  content: '';
+  left: 0px;
+  top: -0px;
+  width: 100px;
+  height: 100px;
+  background: url(images/circle.png) no-repeat center;
 }
-#advantages .advantages_block li p {
-  font-size: 15px;
-  position: relative;
-  z-index: 1;
+#advantages .advantages_block li .h4, #advantages .advantages_block li .numeric {
+  text-transform: uppercase;
+  font-weight: 800;
+  display: block;
+}
+#advantages .advantages_block li .numeric {
+  font-size: 60px;
+  line-height: 100%;
+  color: #33c5ff;
 }
 
-@media screen and (max-width: 1300px) {
-  #advantages .advantages_block {
-    padding-top: 30px;
-  }
-  #advantages .advantages_block li {
-    margin-bottom: 20px;
-    padding-left: 50px;
-  }
-  #advantages .advantages_block li .num {
-    top: 0px;
-  }
-}
-@media screen and (max-width: 999px) {
-  #advantages .advantages_block li {
-    width: 46%;
-  }
-}
-@media screen and (max-width: 800px) {
-  #advantages .in {
-    padding: 30px 20px;
-  }
-  #advantages .advantages_block li {
-    padding: 20px 20px 30px;
-    margin-bottom: 0px;
-  }
-}
-@media screen and (max-width: 450px) {
-  #advantages .advantages_block {
-    padding-top: 0px;
-  }
-  #advantages .advantages_block li {
-    width: 100%;
-    max-width: 350px;
-    padding: 20px 0px 0px 20px;
-    margin-bottom: 0px;
-  }
-}
 /* end turnkey_work styles */
 /* start working styles */
 #working {
   background-color: #fff;
   z-index: 1;
   overflow: hidden;
+}
+#working .in {
+  text-align: center;
+  padding-bottom: 60px;
+}
+#working .button_block {
+  text-align: center;
+}
+
+.working_block {
+  width: 100%;
+  background: url(images/wave_big.png) no-repeat center bottom/auto 100%;
+  color: #fff;
+}
+.working_block .in {
+  text-align: center;
+  background: url(images/wave_big_cut.png) no-repeat center bottom/100% 100%;
+  height: 410px;
+}
+.working_block ul {
+  height: 360px;
+}
+.working_block ul li {
+  width: 13.78205%;
+  float: left;
+  text-align: left;
+  padding-top: 30px;
+  position: relative;
+  margin-right: 6.41026%;
+}
+.working_block ul li:before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 40px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #cceaff;
+  opacity: 0.66;
+  background-color: #00c6ff;
+  border-radius: 20px;
+  background: -webkit-linear-gradient(0deg, #0072ff 0%, #00c6ff 100%);
+  /* для webkit-браузеров */
+  background: -moz-linear-gradient(0deg, #0072ff 0%, #00c6ff 100%);
+  /* для firefox 3.6+ */
+  background: -o-linear-gradient(0deg, #0072ff 0%, #00c6ff 100%);
+  /* для Opera 11.10+ */
+  background: -ms-linear-gradient(0deg, #0072ff 0%, #00c6ff 100%);
+  /* для IE10+ */
+  background: linear-gradient(0deg, #0072ff 0%, #00c6ff 100%);
+}
+.working_block ul li:nth-child(2n) {
+  top: 95px;
+}
+.working_block ul li:nth-child(2) {
+  margin-right: 8.65385%;
+}
+.working_block ul li:nth-child(3) {
+  margin-right: 9.61538%;
+}
+.working_block ul li:last-child {
+  margin-right: 0;
+  margin-top: 10px;
+}
+.working_block ul .num {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  display: block;
+  margin-bottom: 15px;
+}
+.working_block ul .num sup {
+  font-size: 14px;
+  line-height: 120%;
+}
+.working_block ul .big {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 15px;
+}
+.working_block ul:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* end working styles */
