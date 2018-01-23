@@ -138,7 +138,7 @@ $(document).ready(function() {
 	});
 	
 	
-	$('#services .tab_buttons .tab_but').on('click', function(){ 
+	$('#waterproofing .tab_buttons .tab_but').on('click', function(){ 
 		var tabs = $(this).parents('.tabs_container'),
 		id = $('.tab_buttons .tab_but', tabs).index(this);
 	    
@@ -221,11 +221,17 @@ $(document).ready(function() {
 		  {
 		    breakpoint: 1000,
 		    settings: {
-		      slidesToShow: 4,
+		      slidesToShow: 5,
 		    }
 		  },
 		  {
 		    breakpoint: 800,
+		    settings: {
+		      slidesToShow: 4,
+		    }
+		  },
+		  {
+		    breakpoint: 600,
 		    settings: {
 		      slidesToShow: 3,
 		    }

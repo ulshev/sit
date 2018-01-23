@@ -104,65 +104,25 @@
     
 }
 @media screen and (max-width: 999px) {
-    
+    .sertificates {
+        margin-left: 0;
+    }
 }
 @media screen and (max-width: 800px) {
     #sertificates {
-        .text {
-            width: 450/1340*100%;
-        } 
-        .sertificates_slider {
-            margin-left: 500/1340*100%;
-        }
         
-        .text .button_block {
-            padding-left: 30px;
-        }
     }
 }
 
 @media screen and (max-width: 590px) {
     #sertificates {
-        .text {
-            width: auto;
-            float: none;
-            margin-bottom: 0px;
-            padding-bottom: 40px;
-            
-            .h3 {
-                float: left;
-                margin-top: 10px;
-                margin-right: 30px;
-                
-                &:before, &:after {
-                    display: none;
-                }
-            }
-        }
-        .sertificates_slider {
-            margin: 0 0px;
-            padding: 0 1px;
-            margin-left: 0;
-            .slick-slide {
-                margin: 0 30px;
-            }
-        }
+        
     }
 }
 
 @media screen and (max-width: 450px) {
    #sertificates {
-        .text {
-            padding-top: 0;
-            .button_block {
-                padding-left: 0px;
-            }
-        }
-        .sertificates_slider {
-            .slick-slide {
-                margin: 0 10px;
-            }
-        }
+        
     }
 }
 

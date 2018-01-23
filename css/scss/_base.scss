@@ -48,8 +48,8 @@ body {
 	height: 100%;
 	min-height: 100%;
     
-    background: url(images/site.jpg) center top no-repeat;
-background-size: auto;
+    //background: url(images/site.jpg) center top no-repeat;
+//background-size: auto;
 }
 #index .wrapper, .questions .wrapper, .questions_page .wrapper, .about .wrapper {
 	display: block;
@@ -353,96 +353,9 @@ a.button {
 	text-align: center;
 	position: absolute;
 	width: 100%;
-	top: 80px;
+	//top: 80px;
 	left: 0;
 	z-index: 5;
-	
-	
-	> span {
-		display: inline-block;
-		color: $color_text;
-		font-weight: 700;
-		font-size: 18px;
-		letter-spacing: 0.5px;
-		text-align:  left;
-		padding: 20px 25px 5px 70px;
-		margin: 0 10px 20px;
-		min-width: 305px;
-		height: 60px;
-		box-sizing: border-box;
-		background-color: rgba(255,255,255,0.15);
-		text-decoration: none;
-		border-radius: 30px;
-		position: relative;
-		cursor: pointer;
-		@include transition(all);
-		
-		.icon {
-		    position: absolute;
-		    left:-1px;
-		    top: -1px;
-		    background-color: rgba(255,255,255,0.41);
-		    background-clip: padding-box;
-		    width: 60px;
-		    height: 60px;
-		    padding: 6px;
-		    border: 6px solid rgba(255,255,255,0.20);
-		    box-sizing: border-box;
-		    border-radius: 30px;
-		    overflow: hidden;
-		    @include transition(all);
-		    
-		    &:before, &:after {
-			content: '';
-			height: 36px;
-			width: 36px;
-			position: absolute;
-			top: 6px;
-			left: 6px;
-			background-color: #dbeef9;
-			border-radius: 30px;
-			opacity: 0.7;
-			@include transition(all);
-		    }
-		    &:after {
-			opacity: 0;
-			background: url(images/icon_bg.png) no-repeat center;
-		    }
-		    
-		    img{
-			position: relative;
-			z-index: 2;
-			width: 36px;
-			top: -61px;
-		    }
-		}
-		&:hover, &.active {
-		     background-color: rgba(255,255,255,1);
-		     color: $color_a;
-			
-		    .icon {
-			
-			background: -webkit-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%); /* для webkit-браузеров */
-	background: -moz-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%); /* для firefox 3.6+ */
-	background: -o-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%); /* для Opera 11.10+ */
-	background: -ms-linear-gradient(225deg, #0080ff 0%, #00b5ff 100%); /* для IE10+ */
-	background: linear-gradient(225deg, rgba(0, 128, 255, 0.41) 0%, rgba(0, 181, 255, 0.41) 100%);
-			background-clip: initial;
-			border-color: rgba(255,255,255,0.41);
-			
-			img{
-			    top: 0px;
-			}
-			
-			&:before {
-			    opacity: 0;
-			}
-			 &:after {
-			    opacity: 1;
-			}
-		    }
-		}
-	}
 
 }
 
@@ -529,7 +442,17 @@ a.button {
 		}
 	}
 }
-
+@media screen and (max-width: 1600px) {
+    .section_bg {
+	.img {
+		width: 630/1920*100%;
+	}
+	
+	&:after {
+		width: (1920-630)/1920*100%;
+	}
+    }
+}
 @media screen and (max-width: 999px) {
     .section_bg {
 	.img, .left_block {
