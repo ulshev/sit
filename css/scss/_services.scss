@@ -13,9 +13,15 @@
     .header {
 	float: left;
 	width: 25%;
-	padding-top: 80px;
+	padding-top: 60px;
 	position: relative;
 	z-index: 2;
+	
+	p{
+	    padding-right: 15%;
+	    color: #999;
+
+	}
     }
     
     .h2 {

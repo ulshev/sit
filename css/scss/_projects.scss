@@ -14,15 +14,35 @@
     }
     
 }
-.projects {
+
+#index .production {
     margin-left: 450/1560*100%;
     
     .slide {
-        float: left;
+	margin: 0 20px 20px;
+	width: auto;
+    }
+}
+.projects {
+    text-align: justify;
+    
+    .slide {
+        //float: left;
+	display: inline-block;
+	vertical-align: top;
         position: relative;
         height: 380px;
-	margin: 0 10px 20px;
+	margin: 0 10px 50px;
 	overflow: hidden;
+	width: 30%;
+	text-align: left;
+	
+	&.empty {
+	    border: none !important;
+	    box-shadow: 0 !important;
+	    margin-bottom: 0;
+	    height: 1px;
+	}
         
         .bg_img {
             position: absolute;

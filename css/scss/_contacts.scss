@@ -1,111 +1,160 @@
 /* start contacts styles */
 
-#contacts {
-    z-index: 2;
-    overflow: hidden;
-    padding-top: 50px;
-    
-    .in {
-	padding: 0 20px;
-	.h1, p, .tab_buttons {
-	    position: relative;
-	    z-index: 6;
-	    text-align: center;
+#contacts_page {
+    main {
+	&:after {
+	    @include clear();
 	}
 	
-    }
-    
-    .tab_buttons {
-	.tab_but{
-	    padding: 15px 25px;
-	    .content {
-		padding-left: 30px;
-		background: url(images/icon_address_blue.png) no-repeat left center ;
+	.in {
+	    position: static;
+	    &:after {
+		display: none;
 	    }
 	}
 	
-	.tab_but:last-child .content {
-	    background-image: url(images/tocont.png);
+	.text {
+	    position: relative;
+	    float: left;
+	    margin: 40px 0;
+	    padding: 45px 0;
+	    z-index: 2; 
+	    width: 445px;
+	    
+	    address {
+		padding: 35px 25px 35px 45px;
+		box-shadow: 0 4px 57px rgba(0,0,0,0.26);
+		position: relative;
+		z-index: 2;
+		display: block;
+		font-style: normal;
+		box-sizing: border-box;
+		color: #fff;
+		background: #487ffb;
+		background: -webkit-linear-gradient(60deg, rgba(72,127,251, 0.89) 0%, rgba(101,179,252, 0.89) 100%); /* для webkit-браузеров */
+	background: -moz-linear-gradient(60deg, rgba(72,127,251, 0.89) 0%, rgba(101,179,252, 0.89) 100%); /* для firefox 3.6+ */
+	background: -o-linear-gradient(60deg, rgba(72,127,251, 0.89) 0%, rgba(101,179,252, 0.89) 100%); /* для Opera 11.10+ */
+	background: -ms-linear-gradient(60deg, rgba(72,127,251, 0.89) 0%, rgba(101,179,252, 0.89) 100%); /* для IE10+ */
+	background: linear-gradient(60deg, rgba(72,127,251, 0.89) 0%, rgba(101,179,252, 0.89) 100%);
+	
+	
+		a {
+		    color: #fff;
+		    text-decoration: underline;
+		    
+		    &:hover {
+			text-decoration: none;
+		    }
+		    
+		    &.button {
+			text-decoration: none;
+		    }
+		}
+		p {
+		    margin-bottom: 20px;
+		}
+	    }
+	    
+	    &:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		//width: 300px;
+		height: 100%; //580px;
+		//background-color: #d1ddde;
+		border-top: 45px solid transparent;
+		border-bottom: 45px solid transparent;
+		border-left: 300px solid #d1ddde;
+		z-index: 1;
+		box-sizing: border-box;
+		
+	    }
 	}
+	
     }
-}  
+    
+    
+    .section_bg {
+	background: url(images/contacts_page_form_bg.jpg) no-repeat center / cover;
+	&:after {
+	    display: none;
+	}
+	
+	.left_block {
+	    padding-top: 200px;
+	    max-width: 400px;
+	    
+	    .h1 {
+		text-align:  left;
+	    }
+	}
+	
+	.form_block {
+	    padding-top: 80px;
+	}
+	
+    }
+
+    
+} 
     
 
-	.cont {
-	    background: no-repeat left 3px / 12px auto;
-	    margin-bottom: 0;
-	    padding: 0 0 0 20px;
-	    margin-bottom: 15px;
+	main .cont {
+	    padding: 0 0 0 35px;
 	    font-size: 14px;
 	    line-height: 145%;
+	    position: relative;
 	    
-	    &.address {
-		background-image: url(images/icon_address.png);
+	    &:before {
+		position: absolute;
+		left: 0;
+		top: -2px;
+		content: '';
+		width: 25px;
+		height: 25px;
+		background: url(images/icons.png) no-repeat 0 0;
+		opacity: 0.72;
 	    }
-	    &.letter {
-		background-image: url(images/icon_letter.png);
-		background-position: left 7px;
+	    
+	    &.tel:before {
+		background-position: -28px -25px;
 	    }
-	    &.tel {
-		background-image: url(images/icon_tel.png);
-		background-position: left 9px;
-		
-		font-size: 18px;
+	    &.fax:before {
+		background-position: -28px -53px;
+	    }
+	    &.address:before {
+		background-position: -28px -166px;
+		top: 0;
+	    }
+	    &.time:before {
+		background-position: -28px -199px;
+	    }
+	    &.mail:before {
+		background-position: -28px -78px;
+		top: 0;
 	    }
 	}
     
 .map, #map {
-    height: 649px;
-    position: relative;
-    z-index: 1;
-    margin-top: -50px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    left: 0;
     background: url(images/map.jpg) no-repeat center bottom;
 	
 	
-    &:before {
-	background: url(images/separator.png) no-repeat center bottom;
-        height: 200px;
-	content: "";
-        position: absolute;
-	z-index: 1;
+    iframe {
+	height: 100%;
 	width: 100%;
-	left: 0;
-	top: -60px;
-    }
-}
-.map {   
-    .points {
-	.point.smolensk {
-	    top: 510px;
-	    margin-left: 214px;
-	}
-	
-	.point.yaroslavl {
-	    top: 397px;
-	    margin-left: 340px;
-	}
-	
-	.point.moscow {
-	    top: 580px;
-	    margin-left: 598px;
-	}
-	
-	.point.petersburg {
-	    top: 240px;
-	    margin-left: 255px;
-	}
+	border: 0;
     }
 }
 
-.contacts_page {
-    
-    .map, #map {
-	margin-top: 0;
-	&:before {
-	    display: none;
-	}
-    }
-}
+
+
 
 @media screen and (max-width: 1600px) {
     #contacts {
@@ -120,9 +169,14 @@
     } 
 }
 @media screen and (max-width: 999px) {
-    #contacts {
-	
-    } 
+    #contacts_page {
+	main {
+	    
+	    .text {
+		width: 50%;
+	    }
+	}
+    }
 }
 
 

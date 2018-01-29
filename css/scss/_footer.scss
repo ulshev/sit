@@ -5,11 +5,22 @@
     height: 100%;
 }
 
-#index, .questions, .questions_page, .about {
+#index {
     footer {
         display: block;
     }
 }
+
+    #services_page footer:before, #products_page footer:before, footer.border:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+        background: #26baff;
+    }
+
 footer {
     width: 100%;
     bottom: 0;
@@ -17,7 +28,9 @@ footer {
     position: relative;
     display: table-row;
     background: #fff; //url(images/site.jpg) center -6948px no-repeat;
-background-size: auto;
+    background-size: auto;
+    box-sizing: border-box;
+
     
     .in { 
         padding: 40px 20px 45px;

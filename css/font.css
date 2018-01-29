@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Proxima Nova';
     src: url('../fonts/proxima_nova_light.eot');
-    src: local('Proxima Nova'),
+    src: /*local('Proxima Nova'),*/
          url('../fonts/proxima_nova_light.eot?#iefix') format('embedded-opentype'),
          url('../fonts/proxima_nova_light.woff2') format('woff2'),
          url('../fonts/proxima_nova_light.woff') format('woff'),
@@ -15,7 +15,7 @@
 @font-face {
     font-family: 'Proxima Nova';
     src: url('../fonts/proxima_nova_regular.eot');
-    src: local('Proxima Nova'),
+    src: /*local('Proxima Nova'),*/
          url('../fonts/proxima_nova_regular.eot?#iefix') format('embedded-opentype'),
          url('../fonts/proxima_nova_regular.woff2') format('woff2'),
          url('../fonts/proxima_nova_regular.woff') format('woff'),
@@ -28,7 +28,7 @@
 @font-face {
     font-family: 'Proxima Nova';
     src: url('../fonts/proxima_nova_bold.eot');
-    src: local('Proxima Nova'),
+    src: /*local('Proxima Nova'),*/
          url('../fonts/proxima_nova_bold.eot?#iefix') format('embedded-opentype'),
          url('../fonts/proxima_nova_bold.woff2') format('woff2'),
          url('../fonts/proxima_nova_bold.woff') format('woff'),
@@ -41,7 +41,7 @@
 @font-face {
     font-family: 'Proxima Nova';
     src: url('../fonts/proxima_nova_extrabold.eot');
-    src: local('Proxima Nova'),
+    src: /*local('Proxima Nova'),*/
          url('../fonts/proxima_nova_extrabold.eot?#iefix') format('embedded-opentype'),
          url('../fonts/proxima_nova_extrabold.woff2') format('woff2'),
          url('../fonts/proxima_nova_extrabold.woff') format('woff'),

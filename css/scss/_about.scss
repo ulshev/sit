@@ -31,8 +31,18 @@
         }
     }
     
+    .text {
+        padding-bottom: 10px;
+        margin-left:50%;
+        padding-top: 50px;
+    }
+    .button_block {
+        padding-bottom: 50px;
+        margin-left:50%;
+    }
+}
+    
     .video {
-        margin-top: 140px;
         width: 710/1560*100%;
         position: relative;
         background: url(images/video.jpg) no-repeat center / cover;
@@ -52,15 +62,9 @@
         }
     }
     
-    .text {
-        padding-bottom: 10px;
-        margin-left:50%;
-        padding-top: 50px;
-    }
-    .button_block {
-        padding-bottom: 50px;
-        margin-left:50%;
-    }
+#about .video {
+    margin-top: 140px;
+    text-align: center;
 }
 
 p.big {
@@ -83,19 +87,6 @@ p.big {
             padding-top: 5px;
         }
         
-        .video {
-            display: block;
-            float: none;
-            margin-top: 35px;
-            margin: 35px auto 0;
-            width: auto;
-            max-width: 600px;
-            height: 350px;
-            a span {
-                line-height: 500px;
-            }
-        }
-        
         .text {
             padding-bottom: 10px;
             margin-left: 0;
@@ -105,7 +96,22 @@ p.big {
             padding-bottom: 40px;
             margin-left:0;
         }
+        .video {
+            display: block;
+            float: none;        
+            width: auto;
+            margin: 35px auto 0;
+        }
     }
+        
+        .video {
+            max-width: 600px;
+            height: 350px;        
+            width: auto;
+            a span {
+                line-height: 500px;
+            }
+        }
     
 }
 @media screen and (max-width: 800px) {
@@ -115,25 +121,25 @@ p.big {
 }
 
 @media screen and (max-width: 590px) {
-    #about {
+    #about { 
+    }
         .video {
             height: 250px;
             a span {
                 line-height: 380px;
             }
         }
-    }
 }
 
 @media screen and (max-width: 450px) {
     #about {
+    }
         .video {
             height: 170px;
             a span {
                 line-height: 280px;
             }
         }
-    }
 }
 
 /* end about styles */
