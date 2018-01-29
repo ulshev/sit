@@ -907,14 +907,8 @@ ul.main_menu .active a:after, ul.main_menu a.active:after {
   display: block;
 }
 
-#services_page footer:before, #products_page footer:before, footer.border:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #26baff;
+#index footer:before, #about_page footer:before, #contacts_page footer:before {
+  display: none;
 }
 
 footer {
@@ -926,6 +920,16 @@ footer {
   background: #fff;
   background-size: auto;
   box-sizing: border-box;
+}
+footer:before {
+  content: '';
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #26baff;
 }
 footer .in {
   padding: 40px 20px 45px;
@@ -2211,10 +2215,10 @@ footer #dev {
   margin-bottom: 30px;
 }
 
-#index .production {
+#index .projects {
   margin-left: 28.84615%;
 }
-#index .production .slide {
+#index .projects .slide {
   margin: 0 20px 20px;
   width: auto;
 }
@@ -2569,31 +2573,19 @@ p.big {
 }
 /* end about styles */
 /* start sertificates styles */
-.sertificates {
+#index .sertificates {
   margin-left: calc(50% - 10px);
-  margin-bottom: 40px;
+  padding-top: 0;
 }
-.sertificates.slick-slider .slick-list {
-  margin: 0px;
-  padding: 10px;
-}
-.sertificates .sert {
-  margin: 0 10px;
+#index .sertificates .sert {
   width: 220px;
-  position: relative;
-  -webkit-transition: all 0.2s ease-out 0s;
-  -moz-transition: all 0.2s ease-out 0s;
-  -o-transition: all 0.2s ease-out 0s;
-  transition: all 0.2s ease-out 0s;
-  background: #fff;
 }
-.sertificates .sert:hover {
+#index .sertificates .sert:hover {
   transform: scale(1.1);
+  box-shadow: 0;
+  margin-top: 0;
 }
-.sertificates .sert a {
-  display: block;
-}
-.sertificates .sert a:before {
+#index .sertificates .sert a:before {
   content: "";
   position: absolute;
   left: 0;
@@ -2617,14 +2609,18 @@ p.big {
   /* для IE10+ */
   background: linear-gradient(45deg, rgba(0, 128, 255, 0.43) 0%, rgba(0, 181, 255, 0.43) 100%);
 }
-.sertificates .sert a:hover:before {
+#index .sertificates .sert a:after {
+  display: none;
+  content: '';
+}
+#index .sertificates .sert a:hover:before {
   opacity: 0;
   background: none;
 }
-.sertificates .sert a:hover img {
+#index .sertificates .sert a:hover img {
   opacity: 1;
 }
-.sertificates .sert img {
+#index .sertificates .sert img {
   width: 100%;
   display: inline-block;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -2632,6 +2628,91 @@ p.big {
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
   opacity: 0.8;
+}
+
+.sertificates {
+  margin-bottom: 40px;
+  padding-top: 20px;
+  text-align: justify;
+}
+.sertificates.slick-slider .slick-list {
+  margin: 0px;
+  padding: 10px;
+}
+.sertificates .sert {
+  margin: 0 10px 20px;
+  width: calc(20% - 25px);
+  position: relative;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  background: #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.sertificates .sert:hover {
+  margin-top: -1%;
+  box-shadow: 12px 12px 178px rgba(0, 0, 0, 0.26);
+}
+.sertificates .sert img {
+  width: 100%;
+}
+.sertificates .sert a {
+  display: block;
+}
+.sertificates .sert a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  z-index: 2;
+  background-color: rgba(96, 175, 249, 0.89);
+  background: -webkit-linear-gradient(60deg, rgba(0, 128, 255, 0.8943) 0%, rgba(0, 181, 255, 0.89) 100%);
+  /* для webkit-браузеров */
+  background: -moz-linear-gradient(60deg, rgba(0, 128, 255, 0.89) 0%, rgba(0, 181, 255, 0.89) 100%);
+  /* для firefox 3.6+ */
+  background: -o-linear-gradient(60deg, rgba(0, 128, 255, 0.89) 0%, rgba(0, 181, 255, 0.89) 100%);
+  /* для Opera 11.10+ */
+  background: -ms-linear-gradient(60deg, rgba(0, 128, 255, 0.89) 0%, rgba(0, 181, 255, 0.89) 100%);
+  /* для IE10+ */
+  background: linear-gradient(60deg, rgba(0, 128, 255, 0.8943) 0%, rgba(0, 181, 255, 0.89) 100%);
+}
+.sertificates .sert a:after {
+  display: block;
+  content: "Открыть";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  margin-left: -70px;
+  margin-top: -23px;
+  width: 140px;
+  height: 46px;
+  background: #fff;
+  color: #33c5ff;
+  text-align: center;
+  line-height: 46px;
+  font-size: 14px;
+  border-radius: 25px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.sertificates .sert a:hover {
+  box-shadow: 12px 12px 178px rgba(0, 0, 0, 0.9);
+}
+.sertificates .sert a:hover:before, .sertificates .sert a:hover:after {
+  opacity: 1;
 }
 .sertificates .slick-arrow {
   margin-top: -7px;
@@ -2654,8 +2735,48 @@ p.big {
 }
 
 @media screen and (max-width: 999px) {
-  .sertificates {
+  #index .sertificates {
     margin-left: 0;
+  }
+
+  .sertificates .sert {
+    width: calc(25% - 25px);
+  }
+  .sertificates .sert:hover {
+    box-shadow: 12px 12px 108px rgba(0, 0, 0, 0.26);
+  }
+  .sertificates .sert a:after {
+    margin-left: -55px;
+    margin-top: -18px;
+    width: 110px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sertificates .sert {
+    width: calc(33% - 25px);
+  }
+  .sertificates .sert:hover {
+    box-shadow: 12px 12px 78px rgba(0, 0, 0, 0.26);
+  }
+}
+@media screen and (max-width: 590px) {
+  .sertificates .sert {
+    width: calc(33% - 15px);
+    margin: 0 5px 20px;
+  }
+  .sertificates .sert:hover {
+    box-shadow: 12px 12px 58px rgba(0, 0, 0, 0.26);
+  }
+}
+@media screen and (max-width: 450px) {
+  .sertificates .sert {
+    width: calc(50% - 25px);
+    margin: 0 10px 20px;
+  }
+  .sertificates .sert:hover {
+    box-shadow: 12px 12px 48px rgba(0, 0, 0, 0.26);
   }
 }
 /* end sertificates styles */
@@ -3296,6 +3417,9 @@ p.big {
 
 main {
   position: relative;
+}
+main .button_block {
+  text-align: center;
 }
 
 .left, .right {
