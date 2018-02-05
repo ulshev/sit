@@ -17,7 +17,7 @@
 	max-width: 300px;
     }
     
-    
+}    
     .advantages_block {
 	margin-left: 800/1560*100%;
 	padding-top: 20px;
@@ -66,7 +66,52 @@
 	}
     }
     
-}
+    .types .advantages_block{
+	margin-left: 400/1560*100%;
+	counter-reset: num;
+	
+	li {
+	    margin-right: 2%;
+	    width: 29%;
+	    max-width: none;
+	    padding-left: 110px;
+	    padding-bottom: 0;
+	    
+	    &:last-child {
+		width: 35%;
+	    }
+	    
+	    &:before {
+		counter-increment: num; 
+		content: counter(num);
+		color: $color_a;
+		font-weight: 700;
+		font-size: 60px;
+		text-align: center;
+		line-height: 105px;
+		top: -15px;
+	    }
+	    
+	    .h4 {
+		font-size: 22px;
+	    }
+	    
+	    p{
+		color: #999999;
+	    }
+	}
+    }
+
+
+     #advantages.types {
+	.in {
+	    padding-bottom: 50px;
+	}
+	
+	.left_block {
+	    width: 400/1560*100%;
+	}
+    }
 
 @media advantages and (max-width: 1600px) {
     #advantages {

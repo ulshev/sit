@@ -5,7 +5,7 @@
     padding-top: 135px;
     padding-bottom: 40px;
     width: 100%;
-    min-height: 205px;
+    //min-height: 205px;
     color: #fff;
     
     h1 {
@@ -36,6 +36,12 @@
 	
 	a {
 	    display: inline-block;
+	    border-bottom: 1px solid transparent;
+	    text-decoration: none;
+	    
+	    &.active, &:hover {
+		border-bottom-color: rgba(255, 255, 255, 0.5);
+	    }
 	}
     }
 }
@@ -79,15 +85,28 @@ main {
 }
 .right {
     float: right;
+    clear: right;
     margin: 5px 0 20px 30px;
 }
 
 
 .content_wrap {
-    padding-top: 65px;
-    padding-bottom: 55px;
     font-size: 110%;
     line-height: 160%;
+    overflow: hidden;
+    
+    &:after {
+	@include clear();
+    }
+    
+    .in {
+	padding-top: 65px;
+	padding-bottom: 55px;
+	
+	&:after {
+	    display: none;
+	}
+    }
     
     .more_text_link {
 	color: $color_a;
@@ -100,10 +119,47 @@ main {
 	    text-decoration: none;
 	}
     }
+    
+    .image_block {
+	float: right;
+	box-sizing: border-box;
+	width: 50%;
+	//padding: 5%;
+	background: #5ea1f3;
+	height: 780px;
+	color: #fff;
+	position: relative;
+	text-align: right;
+	z-index: 3;
+	margin-left: 40px;
+	
+	background: -webkit-linear-gradient(193deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для webkit-браузеров */
+	background: -moz-linear-gradient(193deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для firefox 3.6+ */
+	background: -o-linear-gradient(193deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для Opera 11.10+ */
+	background: -ms-linear-gradient(193deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для IE10+ */
+	background: linear-gradient(193deg, #6db9fd 0%, #3863d0 71%, #223261 100%);
+	
+	img {
+	    max-width: 80%;
+	}
+	
+	.h2 {
+	    text-transform: uppercase;
+	    position: absolute;
+	    top: 45%;
+	    left: 60px;
+	    //font-weight: 400;
+	    
+	}
+    }
+}
+
+main.content_wrap {
+    background-color: #f4fbfe;
 }
 #about_page{
     .content_wrap {
-	background-color: #f4fbfe;
+	//background-color: #f4fbfe;
 	.in {
 	    &:before {
 		content: "";
@@ -126,10 +182,8 @@ main {
 
 .text {
     section {
-	
-	
 	&:after{
-	    @include clear();
+	    //@include clear();
 	}
 	
 	
@@ -167,92 +221,449 @@ main {
 	
 	li {
 	    position: relative;
-	    padding-left: 25px;
-	    padding-top: 17px;
+	    //padding-left: 25px;
+	    padding-top: 7px;
 	    margin-bottom: 15px;
 	    
 	    &:before {
-		position: absolute;
-		top: 0;
-		left: 0;
+		display: inline-block;
+		vertical-align: -2px;;
 		counter-increment: number;
-		content: "0"counter(number);
-		color: #cde7ed;
-		font-size: 40px;
+		content: "0" counter(number);
+		//color: #fff;
+		font-size: 30px;
 		line-height: 100%;
-		font-weight: 800;
+		font-weight: 700;
 		z-index: -1;
+		margin-right: 15px;
+		color: $color_a;
+		letter-spacing: 0.5px;
+		width: 40px;
+	    }
+	}
+	
+	&.highlight {
+	    li {
+		margin-bottom: 20px;
+		padding-left: 70px;
+		color: $color_a;
+		&:before {
+		    color: #fff;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    content: counter(number);
+		    font-size: inherit;
+		    width: 40px;
+		    height: 40px;
+		    background: #3863d0;
+		    border-radius: 20px;
+		    text-align:  center;
+		    font-weight: normal;
+		    //opacity: 0.5;
+		    line-height: 40px;
+		    
+		    background: -webkit-linear-gradient(135deg, #26baff 0%, #1269d1 100%); /* для webkit-браузеров */
+		    background: -moz-linear-gradient(135deg, #26baff 0%, #1269d1 100%); /* для firefox 3.6+ */
+		    background: -o-linear-gradient(135deg, #26baff 0%, #1269d1 100%); /* для Opera 11.10+ */
+		    background: -ms-linear-gradient(135deg, #26baff 0%, #1269d1 100%); /* для IE10+ */
+		    background: linear-gradient(135deg, #26baff 0%, #1269d1 100%);
+		}
 	    }
 	}
     }
     
 }
 
+.prevnext_links {
+    margin-bottom: 50px; 
+    text-align:  justify;
+    .in:after {
+	display: inline-block;
+	width: 100%;
+    }
+    
+    a {
+	display: inline-block;
+	color: #989898;;
+	text-decoration: none;
+    }
+    
+    .prev {
+	&:before {
+	    content: "";
+	    display: inline-block;
+	    width: 30px;
+	    height: 21px;
+	    vertical-align: -6px;
+	    margin-right: 10px;
+	    background: url(images/arrow_grey.png) no-repeat left top;
+	}
+	&:hover{
+	    color: $color_a;
+	    &:before {
+		background-position: left bottom;
+	    }
+	}
+    }
+    .next {
+	&:after {
+	    content: "";
+	    display: inline-block;
+	    width: 30px;
+	    height: 21px;
+	    vertical-align: -6px;
+	    margin-left: 10px;
+	    background: url(images/arrow_grey.png) no-repeat right top;
+	}
+	&:hover{
+	    color: $color_a;
+	    &:after {
+		background-position: right bottom;
+	    }
+	}
+    }
+}
+
+.galery {
+    margin-bottom: 50px;
+    width: 100%;
+    
+    .slick-list {
+	margin: 0 -2px;
+    }
+    
+    .slide {
+	margin: 2px;
+	width: 25%;
+	display: inline-block;
+	position: relative;
+	height: auto;
+	
+	a {
+	    display: inline-block;
+	    
+	    &:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.69;
+		background: #3863d0;
+		
+		background: -webkit-linear-gradient(135deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для webkit-браузеров */
+	background: -moz-linear-gradient(135deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для firefox 3.6+ */
+	background: -o-linear-gradient(135deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для Opera 11.10+ */
+	background: -ms-linear-gradient(135deg, #6db9fd 0%, #3863d0 71%, #223261 100%); /* для IE10+ */
+	background: linear-gradient(135deg, #6db9fd 0%, #3863d0 71%, #223261 100%);
+	@include transition(all);
+	    }
+	    
+	    &:after {
+                    display: block;
+                    content: "Открыть фото";
+                    position: absolute;
+                    z-index: 3;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -70px;
+                    margin-top: -23px;
+                    width: 140px;
+                    height: 46px;
+                    background:  $color_a;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 46px;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    opacity: 0;
+                    @include transition(all);
+                }
+	    &:hover {
+		&:before {
+		    opacity: 0;
+		    
+		}
+		&:after {
+		    opacity: 1;
+		    
+		}
+	    }
+	}
+	
+	img {
+	    width: 100%;
+	    display: inline;
+	    vertical-align: bottom;
+	}
+    }
+    
+    .slick-arrow {
+	background-image: url(images/arr_white.png);
+    }
+}
+
+
+#accordion {
+    .h5 {
+	padding: 25px;
+	font-size: 20px;
+	text-transform: uppercase;
+	border: 1px solid #ededed;
+	margin-top: 10px;
+	position: relative;
+	cursor: pointer;
+	
+	&.ui-accordion-header-active {
+	    background-color: #3863d0;
+	    color: #fff;
+	    border-bottom: 0;
+	    @include transition(all);
+	    
+	    background: -webkit-linear-gradient(right, #6db9fd 0%, #3863d0 47%, #223261 72%, #111a30 100%); /* для webkit-браузеров */
+	    background: -moz-linear-gradient(right, #6db9fd 0%, #3863d0 47%, #223261 72%, #111a30 100%); /* для firefox 3.6+ */
+	    background: -o-linear-gradient(right, #6db9fd 0%, #3863d0 47%, #223261 72%, #111a30 100%); /* для Opera 11.10+ */
+	    background: -ms-linear-gradient(right, #6db9fd 0%, #3863d0 47%, #223261 72%, #111a30 100%); /* для IE10+ */
+	    background: linear-gradient(-93deg, #6db9fd 0%, #3863d0 47%, #223261 72%, #111a30 100%);
+	    
+	    .open {
+		opacity: 0;
+	    }
+	    .close {
+		opacity: 1;
+		color: #fff;
+	    }
+	}
+    }
+    
+    .open, .close {
+	float: right;
+	font-size: 14px;
+	color: $color_a;
+	text-transform: none;
+	font-weight: normal;
+	position: absolute;
+	right: 25px;
+	top: 30px;
+	@include transition(all);
+	
+	&:after {
+	    content: '';
+	    display: inline-block;
+	    width: 17px;
+	    height: 17px;
+	    margin-left: 10px;
+	    background: url(images/icons.png) no-repeat 0 -228px;
+	    vertical-align: -4px;
+	}
+    }
+    
+    .close {
+	opacity: 0;
+	&:after {
+	    background-position: -28px -228px;
+	}
+    }
+    
+    .text {
+	padding: 45px 30px;
+	background-color: #fbfeff;
+	border: 1px solid #ededed;
+	border-top: 0;
+	
+	&:after{
+	    @include clear();
+	}
+    }
+}
+
+.fancybox-slide .fancybox_video {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    
+    video {
+	max-width: 100%;
+	max-height: 100%;
+    }
+}
+
+.pagination {
+    li {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	font-size: 11px;
+	color: #989898;
+	width: 21px;
+	
+	
+	a {
+	    display: block;
+	    width: 21px;
+	    height: 21px;
+	    line-height: 23px;
+	    vertical-align: middle;
+	    color: #989898;
+	    border-radius: 11px;
+	    overflow: hidden;
+	    text-decoration: none;
+	    
+	    &:hover {
+		color: $color_a;
+	    }
+	    
+	    &.active {
+		background-color: $color_a;
+		color: #fff;
+	    }
+	}
+	
+	&.pag-ar {
+	    a {
+		text-indent: -1000px;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		background-image: url(images/arr_small.png);
+		//outline: 1px solid red;
+	    }
+	}
+	
+	&.prev {
+	    a {
+		background-position: 9px 7px;
+		
+		&:hover {
+		    background-position: 9px -10px;
+		}
+	    }
+	}
+	&.next {
+	    a {
+		background-position: -11px 7px;
+		
+		&:hover {
+		    background-position: -11px -10px;
+		}
+	    }
+	}
+    }
+}
+
 
 
 .block404 {
-    background: url(images/page404_bg.jpg) no-repeat center bottom/ 100% auto;
+    background: #3557b2 url(images/page404_bg.jpg) no-repeat center/ cover;
     display: table-row;
     height: 100%;
     
     .in {
 	display: table-cell;
-	text-align: center;
+	//text-align: center;
 	height: 100%;
 	vertical-align: middle;
-	padding-top: 160px;
+	padding-top: 75px;
 	padding-bottom: 50px;
+	color: #fff;
+    }
+    
+    .text {
+	max-width: $max-width;
+	margin: 0 auto;
     }
     
     .img404 {
-	font-size: 100px;
+	font-size: 38px;
 	line-height: 110%;
-	display: inline-block;
-	font-weight: 800;
-	color: #fcd5da;
-	margin-bottom: 25px;
+	font-weight: 300;
+	//color: #fff;
+	margin-bottom: 0px;
 	max-width: 80%;
 	
-	img {
-	    width: 100%;
+	strong {
+	    color: #4372dd;
+	    font-size: 200px;
+	    line-height: 100%;
+	    letter-spacing: 14px;
+	    font-weight: 800;
 	}
     }
     
     p {
-	font-size: 35px;
-	margin-bottom: 25px;
+	font-size: 95px;
+	line-height: 100%;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+	//font-weight: 600;
+	padding-left: 50px;
+    }
+    
+    .button {
+	background-color: #fff;
+	color:  $color_a;
+	margin-left: 70px;
+	
+	&:hover {
+	    color: #fff;
+	}
     }
 }
 
 @media screen and (max-width: 1600px) {
-    
+    .top {
+	h1 {
+	    font-size: 60px;
+	    line-height: 100%;
+	}
+    }
 }
 
-@media screen and (max-width: 1200px) /*and (min-width: 1000px)*/ {
-
+@media screen and (max-width: 1300px) /*and (min-width: 1000px)*/ {
+    .top {
+	h1 {
+	    font-size: 53px;
+	    line-height: 100%;
+	}
+    }
 
 }
 @media screen and (max-width: 999px) {
-
-    
+    .top {
+	h1 {
+	    font-size: 46px;
+	    line-height: 100%;
+	}
+    }
 }
 
 
 @media screen and (max-width: 800px) {
-
-
-
-    
+    .top {
+	h1 {
+	    font-size: 36px;
+	    line-height: 100%;
+	}
+    }
 }
 
 @media screen and (max-width: 590px) {
-
-    
+    .top {
+	h1 {
+	    font-size: 30px;
+	    line-height: 100%;
+	}
+    }
 }
 
 @media screen and (max-width: 450px) {
-
-    
+    .top {
+	h1 {
+	    font-size: 26px;
+	    line-height: 100%;
+	}
+    }
 }
 
 /* end content styles */

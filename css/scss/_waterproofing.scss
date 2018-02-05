@@ -13,6 +13,7 @@
 	position: relative;
 	width: 100%;
 	background: no-repeat center top;
+	padding-top: 0;
 	
 	.in {
 	    padding: 0;
@@ -40,16 +41,18 @@
 	    @include clear();
 	}
 	
-	&.residential_facility {
+	//&.residential_facility {
 	    background-image: url(images/residential_facility_bg.jpg);
-	}
+	//}
     }
     
     .tab_buttons {
 	top: 80px;
+	position: absolute;
+	text-align: center;
+	border-bottom: 0;
 	
-	
-	> span {
+	.tab_but {
 		display: inline-block;
 		color: $color_text;
 		font-weight: 700;
@@ -64,6 +67,7 @@
 		background-color: rgba(255,255,255,0.15);
 		text-decoration: none;
 		border-radius: 30px;
+		border-bottom: 0;
 		position: relative;
 		cursor: pointer;
 		@include transition(all);
@@ -194,6 +198,16 @@
 	&.p10 {
 	    top: 73.5%;
 	    left: 98.0%;
+	    
+	    .description {
+		left: auto;
+		right: -10px;
+		
+		&:after {
+		    left: auto;
+		    right: 10px;
+		}
+	    }
 	}
 	
 	.plus {
@@ -277,6 +291,14 @@
 		height: 100%;
 		box-sizing: border-box;
 		border-radius: 0 10px 10px 0;
+		
+		
+		    
+		    .h5 {
+			font-weight: 700;
+			font-size: 21px;
+			
+		    }
 	    }
 	   
 	}
@@ -306,6 +328,22 @@
 	.tab {
 	    h3 {
 		top: 100px;
+	    }
+	}
+	
+	.point {
+	    .description {
+	       width: 620px;
+	       margin-left: -310px;
+		
+		.info {
+		    padding: 20px;
+		    
+		    p {
+			margin-bottom: 10px;
+		    }
+		}
+	       
 	    }
 	}
     }
@@ -414,7 +452,7 @@
 	}
 	.tab {
 	    h3 {
-		top: 60px;
+		top: 80px;
 		font-size: 19px;
 	    }
 	}
@@ -454,7 +492,7 @@
     }
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 700px) {
     #waterproofing { 
 	display: none;
 	

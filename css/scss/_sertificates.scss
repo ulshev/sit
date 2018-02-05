@@ -66,6 +66,7 @@
     margin-bottom: 40px;
     padding-top: 20px;
     text-align: justify;
+    margin-left: -10px;
     
         &.slick-slider .slick-list { 
             margin: 0px;
@@ -73,7 +74,7 @@
         }
         
         .sert {
-            margin: 0 10px 20px;
+            margin: 0 10px 25px;
             width: calc(20% - 25px);
             position: relative; 
             @include transition(all);
@@ -239,7 +240,7 @@
     .sertificates {
         .sert {
             width: calc(50% - 25px);
-            margin: 0 10px 20px;
+            margin: 0 10px 25px;
             
             &:hover{
                 box-shadow: 12px 12px 48px rgba(0, 0, 0, 0.26);

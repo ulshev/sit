@@ -1,59 +1,41 @@
 /* start popups styles */
 
-.m_window {
-    background-color: rgba(0, 0, 0, 0.5);
+.gUniFormModalWindow {
+    background-color: rgba(2, 7, 17, 0.9);
+    margin: 0;
+    padding: 0;
     
-    position: absolute;
-    width:100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 50;
-    
-    .window_block {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	width: 570px;
-	height: 410px;
-	box-sizing: border-box;
-	padding: 50px 50px;
-	background: #d7dde9 url(images/m_window_bg.jpg) no-repeat center bottom/ cover;
-	
-	.close {
+    .gUniFormModalWindowContainer {
+	width: 940px;
+	height: 570px;
+	padding: 0px;
+	border-radius: 0;
+	background: #1598f3 url(images/m_window_bg.jpg) no-repeat center bottom/ cover;
+	&:after {
+	    content: "СИТ";
 	    position: absolute;
-	    width: 40px;
-	    height: 40px;
-	    top:50px;
-	    right: 0px;
+	    top: 50%;
+	    left:60px;
+	    margin-top: -50px;
+	    color: $color_a;
+	    font-size: 180px;
+	    line-height: 100px;
+	    font-weight: 800;
+	}
+	
+	.gUniFormModalWindowExit {
+	    position: absolute;
+	    width: 24px;
+	    height: 24px;
+	    top:15px;
+	    right: 15px;
 	    cursor: pointer;
-	    background-color: rgba(255, 255, 255, 0.6);
+	    background-color: transparent;
 	    text-indent: -100000px;
+	    background: url(images/close.png) no-repeat center top ;
+	    @include transition(transform);
 	    
-	    &:before {
-		position: absolute;
-		content: "";
-		width: 14px;
-		height: 14px;
-		top: 14px;
-		right: 15px;
-		background: url(images/close_black.png) no-repeat center top ;
-		@include transition(transform);
-	    }
-	    
-	    &:after {
-		content: "";
-		display: block;
-		margin-left: -20px;
-		float: left;
-		border-bottom: 40px solid rgba(255, 255, 255, 0.6); 
-		border-left: 20px solid transparent;
-		}
-	    
-	    &:hover:before {
+	    &:hover {
 		-webkit-transform: rotate(-90deg);
 		-moz-transform: rotate(-90deg);
 		-o-transform: rotate(-90deg);
@@ -61,19 +43,107 @@
 	    }
 	}
 	
-	h3 {
+	.gUniFormContainer {
+	    margin-left: 50%;
+	    padding: 90px 90px 90px 0;
+	    box-sizing: border-box;
+	}
+	
+	.uFormHeading {
 	    margin-bottom: 25px; 
-	    color: #000;
-	    font-weight: 400;
+	    //color: #000;
+	    font-weight: 800;
+	    text-align:  left;
+	    font-family: $font_family_os;
+	    text-transform: uppercase;
+	    font-size: 40px;
+	}
+	
+	p {
+	    font-size: 19px;
+	    line-height: 130%;
+	}
+	
+	input, textarea, select {
+	    width: 100%;
+	    padding: 5px 20px;
+	    margin-bottom: 30px;
+	}
+	
+	.gUniForm input[type="checkbox"] + label {
+	    margin-left: 0;
+	    letter-spacing: 0;
+	    margin-right: -30px;
+	    
+	    &:before {
+		background: url(images/checkbox.png) no-repeat left top;
+		width: 21px;
+		height: 21px;
+	    }
+	    
+	    &:hover:before {
+		opacity: 0.8;
+	    }
+	}
+	.gUniForm input[type="checkbox"]:checked + label {
+	    &:before {
+		background-position: left bottom;
+	    }
 	}
 	
 	a {
-	    color: $color_text;
+	    color: #fff;
 	    text-decoration: underline;
 	    
 	    &:hover {
 		text-decoration: none;
 	    }
+	}
+	
+	.uFormSubmit {
+	    margin-right: 0;
+	    margin-bottom: 30px;
+	    padding: 0 10px 0 30px;
+	    width: 256px;
+	    height: 49px;
+	    line-height: 49px;
+	    font-size: 14px;
+	    font-weight: 400;
+	    background-color: #fff;
+	    color: $color_a;
+	    cursor: pointer;
+	    box-sizing: border-box;
+	    @include transition(background-color);
+	    border: 0;
+	    border-radius: 25px;
+	    text-align: center;
+	    position: relative;
+	    vertical-align: middle;
+	
+	    &:before {
+		content: '';
+		position: absolute;
+		width: 42px;
+		height: 42px;
+		left: 4px;
+		top:4px;
+		background: $color_a url(images/icons.png) no-repeat 8px -96px;
+		border-radius: 21px;
+		@include transition(background-color);
+	    }
+	}
+	.uFormSubmit:hover {
+	    background-color: $color_a;
+	    color: #fff;
+	    
+	    &:before {
+		background-color: #fff;
+		background-position: -36px -96px;
+		
+	    }
+	}
+	.uFormSubmit:active {
+	    background: #18b1ee;
 	}
     }
     
@@ -91,6 +161,90 @@
 	}
     }
     
+}
+
+.gUniFormSuccessContainer {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    
+    .gUniFormSuccessBg {
+	height: 100%;
+	background: #5da0f3 url(images/success_bg.jpg) no-repeat center top;// cover;
+    }
+    
+    .gUniFormSuccessMiddler {
+	margin-left: 660/1920*100%;
+	text-align:  left;
+	position: relative;
+	top: 50%;
+	margin-top: -270px;
+    }
+    
+    .gUniFormSuccessHeading {
+	margin-bottom: 25px; 
+	font-weight: 800;
+	text-align:  left;
+	font-family: $font_family_os;
+	text-transform: none;
+	font-size: 70px;
+	line-height: 90%;
+	letter-spacing: 6px;
+    }
+    
+    .gUniFormSuccessText {
+	text-align:  left;
+	font-size: 20px;
+	letter-spacing: 0.5px;
+    }
+    
+    .gUniFormButtonContainter {
+	text-align: left;
+	padding: 10px 25px;
+    }
+    
+    .gUniFormSuccessButton {
+	padding: 0 19px;
+	
+        height: 47px;
+	min-width: 153px;
+	
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	
+	text-align: center;
+	text-decoration: none;
+	
+	font-size: 14px;
+	line-height: 47px;
+        font-weight: 300;
+	letter-spacing: 0.5px;
+	color: #fff;
+	background: $color_a;;
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: 0 2px 0px rgba(0,0,0,0.1);
+	@include transition(all);
+	
+	&:hover {
+		background-color: #18b1ee;
+		opacity: 1;
+	}
+	&:active {
+		box-shadow: inset 0 0 25px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.1);
+	}
+	
+    }
+    
+    .gUniFormSuccessExit {
+	display: none;
+    }
 }
 
 @media screen and (max-width: 1000px) {

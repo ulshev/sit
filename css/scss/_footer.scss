@@ -5,9 +5,9 @@
     height: 100%;
 }
 
-#index {
+#services_page {
     footer {
-        display: block;
+        display: table-row;
     }
 }
 
@@ -20,7 +20,7 @@ footer {
     bottom: 0;
     left: 0;
     position: relative;
-    display: table-row;
+    display: block;
     background: #fff; //url(images/site.jpg) center -6948px no-repeat;
     background-size: auto;
     box-sizing: border-box;
