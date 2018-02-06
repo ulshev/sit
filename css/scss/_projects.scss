@@ -13,6 +13,10 @@
 	margin-bottom: 30px;
     }
     
+    .left_block {
+	padding-top: 70px;
+    }
+    
 }
 
 #index .projects {
@@ -96,7 +100,7 @@
             padding: 10px 25px 25px 25px;
             z-index: 3;
             font-size: 20px;
-            line-height: 125%;
+            line-height: 140%;
             color: #fff;
 	    min-height: 90px;
             
@@ -137,8 +141,10 @@
 	}
 	
 	.tab {
-	    text-align: justify;
+	    //text-align: justify;
 	    position: relative;
+	    margin-right: -25px;
+	    padding-right: 1px;
 	    
 	    &:after {
 		content: "";
@@ -154,6 +160,7 @@
 	    height: 160px;
 	    overflow: hidden;
 	    margin-bottom: 30px;
+	    margin-right: 20px;
 	    
 	    a {
 		display: block;
@@ -209,13 +216,43 @@
 
 
 @media screen and (max-width: 1600px) {
-    
+    #projects {
+	.left_block {
+	    padding-top: 20px;
+	}
+    }
+    .projects {
+	.slide {
+	    height: 300px;
+	}
+    }
 }
 
 @media screen and (max-width: 1300px){
     #projects {
 	.in {
 	    padding: 70px 20px 50px;
+	}
+	.left_block {
+	    padding-top: 0px;
+	}
+    }
+    .projects {
+	.slide {
+	    height: 270px;
+	    margin: 0 5px 30px;
+	    width: 31%;
+	    .info {
+		padding: 10px 20px 20px 20px;
+		font-size: 19px;
+		line-height: 140%;
+		min-height: 80px;
+		
+		&:after {
+		    width: 45px;
+		    vertical-align: -2px;
+		}
+	    }
 	}
     }
 }
@@ -237,18 +274,74 @@
 	    padding-bottom: 30px;
 	}
     }
+    .projects {
+	.slide {
+	    height: 270px;
+	    margin: 0 5px 50px;
+	    width: 46%;
+	    .info {
+		padding: 10px 15px 15px 15px;
+		font-size: 18px;
+		line-height: 140%;
+		min-height: 70px;
+		
+		&:after {
+		    width: 40px;
+		    vertical-align: -2px;
+		}
+	    }
+	}
+    }
     
 }
 @media screen and (max-width: 800px) {
-    
+    #projects {
+	.in {
+	    padding: 30px 20px 30px;
+	}
+    }
+    .projects {
+	.slide {
+	    height: 220px;
+	    margin: 0 5px 30px;
+	    
+	    .info {
+		padding: 10px;
+		font-size: 17px;
+		line-height: 140%;
+		min-height: 60px;
+	    }
+	}
+    }
 }
 
 @media screen and (max-width: 590px) {
-    
+    #index .projects {
+	.slide {
+	    margin: 0 0px 10px;
+	}
+    }
+    .projects {
+	.slide {
+	    width: 47%;   
+	    margin: 0 5px 30px;
+	    height: 180px;
+	    
+	    .info {
+		font-size: 16px;
+		line-height: 140%;
+	    }
+	}
+    }
 }
 
 @media screen and (max-width: 450px) {
-    
+    .projects {
+	.slide {
+	    width: 100%;
+	    margin: 0 0px 30px;
+	}
+    }
 }
 
 /* end projects styles */

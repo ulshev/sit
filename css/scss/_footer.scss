@@ -83,7 +83,7 @@ footer {
     }
     
     .tel {
-	font-weight: 400;
+	font-weight: 700;
 	//font-size: 25px;
 	letter-spacing: 0.5px;
 	margin-bottom: 30px;
@@ -169,6 +169,7 @@ footer {
 		display: inline-block;
 		position: relative;
 		border-bottom: 3px solid #fff;
+		font-weight: 800;
 	    }
 	    
 	    &:hover {
@@ -187,10 +188,12 @@ footer {
 	    ul {
 		text-transform: none;
 		padding-top: 15px;
+		font-weight: 400;
 		
 		a {
 		    &:before {
 			content: '››';
+			font-weight: 800;
 		    }
 		    
 		    &:hover:before {

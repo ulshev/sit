@@ -56,6 +56,11 @@
 	    margin-left: 0;
 	}
     }
+    
+    .gUniForm input[type="text"] {
+	padding: 5px 20px;
+	height: 49px;
+    }
     textarea {
 	    margin-left: 0;
 	    height: 140px;
@@ -73,15 +78,18 @@
 	margin-bottom: 0;
 	opacity: 0;
 	margin-left: -2px;
+	position: absolute;
+	margin-right: 0;
     }
     
-    input[type="checkbox"] + label {
+    input[type="checkbox"] + label, &.gUniForm input[type="checkbox"] + label {
 	display: inline-block;
 	//padding-left: 30px;
 	position: relative;
-	margin-left: -15px;
+	//margin-left: -15px;
 	margin-bottom: 30px;
 	vertical-align: middle;
+	border: 1px solid transparent;
 	
 	
 	&:before {
@@ -100,8 +108,18 @@
 	    opacity: 0.8;
 	}
     }
+    input[type="checkbox"]:not(checked) + label {
+	&:hover:before {
+	    background-position: left top;
+	}
+    }
     input[type="checkbox"]:checked + label {
 	&:before {
+	    background-position: left bottom;
+	}
+    }
+    input[type="checkbox"]:not(checked) + label {
+	&:hover:before {
 	    background-position: left bottom;
 	}
     }

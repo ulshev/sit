@@ -368,7 +368,9 @@ $(document).ready(function() {
 	
 	
 	
-	
+	$('#main_slide ul li').click(function(){
+		$('#waterproofing .tab_buttons .tab_but:eq('+$(this).index()+')').click();
+	});
 	
    
 

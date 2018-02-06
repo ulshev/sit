@@ -9,7 +9,7 @@
     color: #fff;
     
     h1 {
-	font-size: 65px;
+	font-size: 55px; //65px;
 	line-height: 100%;
 	max-width: $max-width;
 	margin: 0 auto 35px;
@@ -48,7 +48,7 @@
 
 .bc {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     
     span, a {
 	margin: 0 3px;
@@ -126,7 +126,7 @@ main {
 	width: 50%;
 	//padding: 5%;
 	background: #5ea1f3;
-	height: 780px;
+	height: 680px;
 	color: #fff;
 	position: relative;
 	text-align: right;
@@ -141,6 +141,9 @@ main {
 	
 	img {
 	    max-width: 80%;
+		width: 100%;
+		height: 100%; 
+		object-fit: contain;
 	}
 	
 	.h2 {
@@ -277,10 +280,12 @@ main.content_wrap {
 
 .prevnext_links {
     margin-bottom: 50px; 
-    text-align:  justify;
+    //text-align:  justify;
+    @include clear();
     .in:after {
-	display: inline-block;
-	width: 100%;
+	
+	//display: block;
+	//width: 100%;
     }
     
     a {
@@ -307,6 +312,7 @@ main.content_wrap {
 	}
     }
     .next {
+	float: right;
 	&:after {
 	    content: "";
 	    display: inline-block;
@@ -339,9 +345,12 @@ main.content_wrap {
 	display: inline-block;
 	position: relative;
 	height: auto;
+	height: 339px;
 	
 	a {
-	    display: inline-block;
+	    display: block;
+	    width: 100%;
+	    height: 100%;
 	    
 	    &:before {
 		content: '';
@@ -397,6 +406,9 @@ main.content_wrap {
 	    width: 100%;
 	    display: inline;
 	    vertical-align: bottom;
+	    //width: 100%;
+		height: 100%; 
+		object-fit: cover;
 	}
     }
     
@@ -614,7 +626,7 @@ main.content_wrap {
 @media screen and (max-width: 1600px) {
     .top {
 	h1 {
-	    font-size: 60px;
+	    font-size: 55px; //60px;
 	    line-height: 100%;
 	}
     }
@@ -623,7 +635,7 @@ main.content_wrap {
 @media screen and (max-width: 1300px) /*and (min-width: 1000px)*/ {
     .top {
 	h1 {
-	    font-size: 53px;
+	    font-size: 50px; //53px;
 	    line-height: 100%;
 	}
     }
@@ -645,6 +657,10 @@ main.content_wrap {
 	    font-size: 36px;
 	    line-height: 100%;
 	}
+    }
+    
+    .content_wrap .image_block {
+	display: none;
     }
 }
 

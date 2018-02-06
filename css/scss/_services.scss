@@ -16,9 +16,10 @@
 	padding-top: 60px;
 	position: relative;
 	z-index: 2;
+	max-height: 350px;
 	
 	p{
-	    padding-right: 15%;
+	    padding-right: 5%;
 	    color: #999;
 
 	}
@@ -30,7 +31,14 @@
     
 }
 
-  
+#services_page {
+    #services {
+	.header {
+	    padding-top: 10px;
+	}
+    }
+}
+
 .services_items {
     position: relative;
     text-align: justify;
@@ -113,6 +121,17 @@
 	}
 	
     }
+    
+    #services_page {
+	#services { 
+	    .header {
+		padding-top: 0px;
+		max-height: 290px;
+		//overflow: hidden;
+	    }
+	    
+	}
+    }
 }
 
 @media screen and (max-width: 1300px)  {
@@ -129,7 +148,7 @@
     .services_items {
 	.serv_item {
 	    width: 25%;
-	    height: 250px;
+	    height: 290px; //250px;
 	    margin-bottom: 40px;
 	    
 	    .img {
@@ -215,6 +234,16 @@
 	
 	.header {
 	    padding-top: 30px;
+	}
+    }
+    
+    #services_page {
+	#services { 
+	    .header {
+		float: none;
+		width: auto;
+	    }
+	    
 	}
     }
       

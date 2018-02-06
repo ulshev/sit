@@ -367,10 +367,10 @@ a.button {
 		line-height: 130%;
 		margin-bottom: -4px;
 		display: inline-block;
-		padding: 5px 15px;
+		padding: 13px 15px;
 		text-align:  center;
 		min-width: 85px;
-		cursor: poiter;
+		cursor: pointer;
 		
 		@include transition(border);
 		
@@ -413,7 +413,7 @@ a.button {
 .main_section {
 	//display: none;
 	overflow: hidden;
-	z-index: 1;
+	//z-index: 1;
 	position: relative;
 }
 

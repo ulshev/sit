@@ -17,7 +17,7 @@
 	
 	.in {
 	    padding: 0;
-	    max-width: 1600px;
+	    max-width: none; //1600px;
 	    //position: static;
 	    z-index: auto;
 	}
@@ -160,52 +160,52 @@
 	pointer-events: auto;
 	
 	&.p1 {
-	    top: 22.95%;
-	    left: 31.88%;
+	    top: 23%;
+	    left: 34.8%;
 	}
 	&.p2 {
-	    top: 65%;
-	    left: 22%;
+	    top: 64.6%;
+	    left: 26.5%;
 	}
 	&.p3 {
-	    top: 64.4%;
-	    left: 46.5%;
+	    top: 64.7%;
+	    left: 46.9%;
 	}
 	&.p4 {
-	    top: 78.6%;
-	    left: 27.2%;
+	    top: 78.8%;
+	    left: 31.1%;
 	}
 	&.p5 {
-	    top: 77.5%;
-	    left: 35.5%;
+	    top: 77.8%;
+	    left: 37.9%;
 	}
 	&.p6 {
-	    top: 86.9%;
-	    left: 29.3%;
+	    top: 87.1%;
+	    left: 32.8%;
 	}
 	&.p7 {
 	    top: 81.3%;
-	    left: 45.7%;
+	    left: 46.4%;
 	}
 	&.p8 {
 	    top: 78.9%;
-	    left: 59.4%;
+	    left: 57.9%;
 	}
 	&.p9 {
 	    top: 76.4%;
-	    left: 68.9%;
+	    left: 65.6%;
 	}
-	&.p10 {
+	&.p10, &.p33 {
 	    top: 73.5%;
-	    left: 98.0%;
+	    left: 90%;
 	    
 	    .description {
 		left: auto;
-		right: -10px;
+		right: -65px;
 		
 		&:after {
 		    left: auto;
-		    right: 10px;
+		    right: 60px;
 		}
 	    }
 	}

@@ -6,12 +6,14 @@
     
     .sert {
             width: 220px;
+            margin-bottom: 0;
             
             
             &:hover{
                 transform: scale(1.1); 
-                box-shadow: 0;
+                box-shadow: 0 0 0 transparent;
                 margin-top: 0;
+                
             }
             a {
                 &:before {
@@ -134,7 +136,7 @@
                 }
                 
                 &:hover{
-                    box-shadow: 12px 12px 178px rgba(0, 0, 0, 0.9);
+                    //box-shadow: 12px 12px 178px rgba(0, 0, 0, 0.9);
                     &:before, &:after {
                         opacity: 1;
                         //background: none;
