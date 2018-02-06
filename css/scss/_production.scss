@@ -297,6 +297,20 @@
 	}
     }
     
+    .products_item {
+	padding-top: 50px;
+    }
+    
+    .products_images {
+	float: none;
+	width: 100%;
+    }
+
+    .products_info {
+	margin-left: 0;
+	margin-bottom: 30px;
+    }
+    
 }
 @media screen and (max-width: 800px) {
     #production {
@@ -339,6 +353,9 @@
 		padding: 15px 10px 15px 10px;
 	    }
 	}
+    }
+    .products_item {
+	padding-top: 30px;
     }
 }
 

@@ -2443,6 +2443,7 @@ footer #dev {
   margin-left: 51.25%;
   font-size: 109%;
   line-height: 170%;
+  margin-bottom: 50px;
 }
 .project_info h1 {
   text-transform: none;
@@ -2505,6 +2506,14 @@ footer #dev {
     width: 45px;
     vertical-align: -2px;
   }
+
+  .project_images .main_img {
+    height: 420px;
+  }
+  .project_images .img_small {
+    width: calc(33% - 25px);
+    height: 130px;
+  }
 }
 @media screen and (max-width: 1000px) {
   #projects .in {
@@ -2537,6 +2546,10 @@ footer #dev {
     width: 40px;
     vertical-align: -2px;
   }
+
+  .project_item {
+    padding-top: 50px;
+  }
 }
 @media screen and (max-width: 800px) {
   #projects .in {
@@ -2553,6 +2566,25 @@ footer #dev {
     line-height: 140%;
     min-height: 60px;
   }
+
+  .project_images {
+    float: none;
+    width: 100%;
+  }
+  .project_images .main_img {
+    height: 320px;
+    background: no-repeat center / cover;
+    margin-bottom: 20px;
+  }
+  .project_images .img_small {
+    width: calc(25% - 25px);
+    height: 130px;
+  }
+
+  .project_info {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
 }
 @media screen and (max-width: 590px) {
   #index .projects .slide {
@@ -2568,11 +2600,25 @@ footer #dev {
     font-size: 16px;
     line-height: 140%;
   }
+
+  .project_images .img_small {
+    width: calc(33% - 25px);
+    height: 130px;
+  }
+
+  .project_item {
+    padding-top: 30px;
+  }
 }
 @media screen and (max-width: 450px) {
   .projects .slide {
     width: 100%;
     margin: 0 0px 30px;
+  }
+
+  .project_images .img_small {
+    width: calc(50% - 25px);
+    height: 130px;
   }
 }
 /* end projects styles */
@@ -2832,6 +2878,20 @@ footer #dev {
     margin: 0 10px 40px;
     width: 30%;
   }
+
+  .products_item {
+    padding-top: 50px;
+  }
+
+  .products_images {
+    float: none;
+    width: 100%;
+  }
+
+  .products_info {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
 }
 @media screen and (max-width: 800px) {
   #production .in {
@@ -2863,6 +2923,10 @@ footer #dev {
   }
   .production .slide .info {
     padding: 15px 10px 15px 10px;
+  }
+
+  .products_item {
+    padding-top: 30px;
   }
 }
 @media screen and (max-width: 450px) {
